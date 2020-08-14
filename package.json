@@ -1,6 +1,6 @@
 {
   "name": "@sparticuz/eslint-config",
-  "version": "2.1.4",
+  "version": "3.0.0",
   "description": "Sparticuz's shareable config for eslint",
   "main": "index.js",
   "scripts": {
@@ -22,9 +22,9 @@
     "eslint-plugin-unicorn": "^21.0.0"
   },
   "peerDependencies": {
-    "eslint": "^7.1.0",
+    "eslint": "^7.6.0",
     "prettier": "^2.0.5",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.7"
   },
   "devDependencies": {
     "eslint": "^7.6.0",
