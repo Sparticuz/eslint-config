@@ -59,10 +59,23 @@ module.exports = {
             ignores: ["modules"],
           },
         ],
+        // Sort Typescript
+        "typescript-sort-keys/interface": "error",
+        "typescript-sort-keys/string-enum": "error",
       },
       settings: {
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"],
+        },
+        "import/resolver": {
+          // user <root>/tsconfig.json
+          typescript: {
+            alwaysTryTypes: true,
+          },
+        },
         node: {
-          tryExtensions: [".ts"],
+          // Make sure we are looking for Typescript files as well
+          tryExtensions: [".js", ".json", ".node", ".ts", ".d.ts"],
         },
       },
     },
