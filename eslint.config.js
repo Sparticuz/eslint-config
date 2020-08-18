@@ -28,16 +28,10 @@ module.exports = {
     {
       // Typescript Override Block
       extends: [
-        "airbnb-base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:import/errors",
-        "plugin:import/warnings",
         "plugin:import/typescript",
-        "plugin:promise/recommended",
-        "plugin:node/recommended",
-        "plugin:unicorn/recommended",
         "prettier",
         "plugin:prettier/recommended",
         "prettier/@typescript-eslint",
@@ -47,15 +41,7 @@ module.exports = {
       parserOptions: {
         project: "tsconfig.json",
       },
-      plugins: [
-        "@typescript-eslint",
-        "typescript-sort-keys",
-        "import",
-        "node",
-        "prettier",
-        "promise",
-        "unicorn",
-      ],
+      plugins: ["@typescript-eslint", "typescript-sort-keys"],
       rules: {
         // Make sure we don't require .ts and .tsx
         "import/extensions": [
