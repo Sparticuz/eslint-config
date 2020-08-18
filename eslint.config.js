@@ -52,6 +52,10 @@ module.exports = {
             tsx: "never",
           },
         ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          { devDependencies: true },
+        ],
         // Typescript uses Imports for transpiling
         "node/no-unsupported-features/es-syntax": [
           "error",
@@ -64,6 +68,7 @@ module.exports = {
         "typescript-sort-keys/string-enum": "error",
       },
       settings: {
+        "import/core-modules": ["aws-sdk"],
         "import/parsers": {
           "@typescript-eslint/parser": [".ts", ".tsx"],
         },
@@ -74,6 +79,7 @@ module.exports = {
           },
         },
         node: {
+          allowModules: ["aws-sdk"],
           // Make sure we are looking for Typescript files as well
           tryExtensions: [".js", ".json", ".node", ".ts", ".d.ts"],
         },
