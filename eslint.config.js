@@ -106,6 +106,7 @@ module.exports = {
       "LabeledStatement",
       "WithStatement",
     ],
+    "no-unused-vars": ["warn"],
     "sort-keys": [
       "error",
       "asc",
@@ -113,8 +114,5 @@ module.exports = {
         natural: true,
       },
     ],
-    "no-unused-vars": [
-      "warn"
-    ]
   },
 };
