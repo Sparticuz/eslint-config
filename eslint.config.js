@@ -20,7 +20,9 @@ module.exports = {
   overrides: [
     {
       // Test Javascript Files Override Block
+      extends: ["plugin:ava/recommended"],
       files: ["**/tests/*.js"],
+      plugins: ["ava"],
       rules: {
         "node/no-unpublished-require": 0,
       },
