@@ -12,6 +12,8 @@ module.exports = {
     "plugin:promise/recommended",
     "plugin:node/recommended",
     "plugin:unicorn/recommended",
+    "plugin:security/recommended",
+    "plugin:sonarjs/recommended",
     "prettier",
     "plugin:prettier/recommended",
   ],
@@ -86,7 +88,15 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: "module",
   },
-  plugins: ["import", "node", "prettier", "promise", "unicorn"],
+  plugins: [
+    "import",
+    "node",
+    "prettier",
+    "promise",
+    "security",
+    "sonarjs",
+    "unicorn",
+  ],
   rules: {
     // disallow certain syntax forms, allows for-of
     // http://eslint.org/docs/rules/no-restricted-syntax
