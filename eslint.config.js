@@ -26,7 +26,7 @@ module.exports = {
       files: ["test/**/*.js"],
       plugins: ["ava"],
       rules: {
-        "node/no-unpublished-require": 0,
+        "node/no-unpublished-require": "off",
       },
     },
     {
