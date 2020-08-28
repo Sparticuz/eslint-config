@@ -34,6 +34,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:import/typescript",
+        "plugin:node/recommended-module",
         "prettier",
         "plugin:prettier/recommended",
         "prettier/@typescript-eslint",
@@ -57,13 +58,6 @@ module.exports = {
         "import/no-extraneous-dependencies": [
           "error",
           { devDependencies: true },
-        ],
-        // Typescript uses Imports for transpiling
-        "node/no-unsupported-features/es-syntax": [
-          "error",
-          {
-            ignores: ["modules"],
-          },
         ],
         // Sort Typescript
         "typescript-sort-keys/interface": "error",
