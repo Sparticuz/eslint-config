@@ -113,5 +113,8 @@ module.exports = {
         natural: true,
       },
     ],
+    "no-unused-vars": [
+      "warn"
+    ]
   },
 };
