@@ -15,7 +15,6 @@ module.exports = {
     "plugin:unicorn/recommended",
     "plugin:security/recommended",
     "plugin:sonarjs/recommended",
-    "prettier",
     "plugin:prettier/recommended",
   ],
   // Ignore my dist folders so I don't lint transpiled files
@@ -38,9 +37,7 @@ module.exports = {
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
         "plugin:import/typescript",
         "plugin:node/recommended-module",
-        "prettier",
         "plugin:prettier/recommended",
-        "prettier/@typescript-eslint",
       ],
       files: ["**/*.ts", "**/*.tsx"],
       parser: "@typescript-eslint/parser",
