@@ -64,6 +64,7 @@ module.exports = {
         "typescript-sort-keys/string-enum": "error",
       },
       settings: {
+        // Allow AWS-SDK as an Unpublished Import
         "import/core-modules": ["aws-sdk"],
         "import/parsers": {
           "@typescript-eslint/parser": [".ts", ".tsx"],
@@ -75,6 +76,7 @@ module.exports = {
           },
         },
         node: {
+          // Allow AWS-SDK as an Unpublished Import
           allowModules: ["aws-sdk"],
           // Make sure we are looking for Typescript files as well
           tryExtensions: [".js", ".json", ".node", ".ts", ".d.ts"],
@@ -96,6 +98,8 @@ module.exports = {
     "unicorn",
   ],
   rules: {
+    // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
+    "no-await-in-loop": ["warn"],
     // disallow certain syntax forms, allows for-of
     // http://eslint.org/docs/rules/no-restricted-syntax
     "no-restricted-syntax": [
