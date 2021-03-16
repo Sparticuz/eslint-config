@@ -59,6 +59,8 @@ module.exports = {
           "error",
           { devDependencies: true },
         ],
+        // Typescript eslint has it's own @typescript-eslint/no-shadow rule
+        "no-shadow": "off",
         // Sort Typescript
         "typescript-sort-keys/interface": "error",
         "typescript-sort-keys/string-enum": "error",
