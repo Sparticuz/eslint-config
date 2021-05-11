@@ -120,5 +120,7 @@ module.exports = {
     ],
     // Not ready for ESM until AWS Lambda Node supports modules
     "unicorn/prefer-module": "off",
+    // Not ready until Typescript and DefinitelyTyped update their support
+    "unicorn/prefer-node-protocol": "off",
   },
 };
