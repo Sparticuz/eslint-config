@@ -118,5 +118,7 @@ module.exports = {
         natural: true,
       },
     ],
+    // Not ready for ESM until AWS Lambda Node supports modules
+    "unicorn/prefer-module": "off",
   },
 };
