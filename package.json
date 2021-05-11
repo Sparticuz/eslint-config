@@ -4,7 +4,7 @@
   "description": "Sparticuz's shareable config for eslint",
   "main": "index.js",
   "scripts": {
-    "test": "eslint eslint.config.js"
+    "test": "eslint .eslintrc.js"
   },
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "license": "ISC",
