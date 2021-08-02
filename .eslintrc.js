@@ -13,8 +13,10 @@ module.exports = {
     "plugin:promise/recommended",
     "plugin:node/recommended",
     "plugin:unicorn/recommended",
+    "plugin:array-func/recommended",
     "plugin:security/recommended",
     "plugin:sonarjs/recommended",
+    "plugin:switch-case/recommended",
     "plugin:prettier/recommended",
   ],
   // Ignore my dist folders so I don't lint transpiled files
@@ -91,12 +93,14 @@ module.exports = {
     sourceType: "module",
   },
   plugins: [
+    "array-func",
     "import",
     "node",
     "prettier",
     "promise",
     "security",
     "sonarjs",
+    "switch-case",
     "unicorn",
   ],
   rules: {
