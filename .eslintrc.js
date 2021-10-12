@@ -8,8 +8,7 @@ module.exports = {
   },
   extends: [
     "airbnb-base",
-    "plugin:import/errors",
-    "plugin:import/warnings",
+    "plugin:import/recommended",
     "plugin:promise/recommended",
     "plugin:node/recommended",
     "plugin:unicorn/recommended",
