@@ -45,7 +45,7 @@ module.exports = {
       parserOptions: {
         project: "tsconfig.json",
       },
-      plugins: ["@typescript-eslint", "typescript-sort-keys"],
+      plugins: ["@typescript-eslint"],
       rules: {
         // Make sure we don't require .ts and .tsx
         "import/extensions": [
@@ -62,9 +62,6 @@ module.exports = {
         ],
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
-        // Sort Typescript
-        "typescript-sort-keys/interface": "error",
-        "typescript-sort-keys/string-enum": "error",
       },
       settings: {
         // Allow AWS-SDK as an Unpublished Import
