@@ -104,6 +104,8 @@ module.exports = {
     "unicorn",
   ],
   rules: {
+    // Array Func prefers array.from, however, Unicorn prefers spread
+    "array-func/prefer-array-from": "off",
     // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
     "no-await-in-loop": ["warn"],
     // disallow certain syntax forms, allows for-of
