@@ -106,6 +106,8 @@ module.exports = {
   rules: {
     // Array Func prefers array.from, however, Unicorn prefers spread
     "array-func/prefer-array-from": "off",
+    // The Ecosystem is moving to requiring extension on require()
+    "import/extensions": "off",
     // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
     "no-await-in-loop": ["warn"],
     // disallow certain syntax forms, allows for-of
