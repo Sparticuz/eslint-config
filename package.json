@@ -9,26 +9,26 @@
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "license": "ISC",
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.32.0",
-    "@typescript-eslint/parser": "^4.32.0",
-    "eslint-config-airbnb-base": "^14.2.1",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-array-func": "^3.1.7",
-    "eslint-plugin-ava": "^13.0.0",
-    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-ava": "^13.1.0",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-promise": "^5.2.0",
     "eslint-plugin-security": "^1.4.0",
-    "eslint-plugin-sonarjs": "^0.10.0",
+    "eslint-plugin-sonarjs": "^0.11.0",
     "eslint-plugin-switch-case": "^1.1.2",
-    "eslint-plugin-typescript-sort-keys": "^1.8.0",
-    "eslint-plugin-unicorn": "^36.0.0"
+    "eslint-plugin-typescript-sort-keys": "^2.1.0",
+    "eslint-plugin-unicorn": "^39.0.0"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "prettier": "^2.4.1",
-    "typescript": "^4.4.3"
+    "eslint": "^8.4.1",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.2"
   }
 }
