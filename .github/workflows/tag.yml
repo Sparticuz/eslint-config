@@ -1,0 +1,22 @@
+name: Bump Version
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  bump-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - run: cat ./package.json
+      - name: Automated Version Bump
+        id: version-bump
+        uses: phips28/gh-action-bump-version@v9.0.1
+        with:
+          tag-prefix: 'v'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - run: cat ./package.json
