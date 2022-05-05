@@ -17,6 +17,7 @@ module.exports = {
     "plugin:security/recommended",
     "plugin:sonarjs/recommended",
     "plugin:switch-case/recommended",
+    "plugin:eslint-comments/recommended",
     "plugin:prettier/recommended",
   ],
   // Ignore my dist folders so I don't lint transpiled files
@@ -25,7 +26,7 @@ module.exports = {
     {
       // Test Javascript Files Override Block
       extends: ["plugin:ava/recommended"],
-      files: ["test/**/*.js"],
+      files: ["test/**/*.js", "test/**/*.ts"],
       plugins: ["ava"],
       rules: {
         "node/no-unpublished-require": "off",
