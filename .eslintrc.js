@@ -164,6 +164,7 @@ module.exports = {
     "switch-case",
     "unicorn",
   ],
+  reportUnusedDisableDirectives: true,
   rules: {
     // Array Func prefers array.from, however, Unicorn prefers spread
     "array-func/prefer-array-from": "off",
