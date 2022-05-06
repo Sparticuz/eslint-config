@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 module.exports = {
   env: {
     es6: true,
@@ -26,7 +27,7 @@ module.exports = {
     {
       // Test Javascript Files Override Block
       extends: ["plugin:ava/recommended"],
-      files: ["test/**/*.js", "test/**/*.ts"],
+      files: ["test/**/*.js"],
       plugins: ["ava"],
       rules: {
         "node/no-unpublished-require": "off",
@@ -45,7 +46,7 @@ module.exports = {
       files: ["**/*.ts", "**/*.tsx"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "tsconfig.json",
+        project: "tsconfig.eslint.json",
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys"],
       rules: {
@@ -64,6 +65,65 @@ module.exports = {
         ],
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
+        // Sort Typescript
+        "typescript-sort-keys/interface": "error",
+        "typescript-sort-keys/string-enum": "error",
+      },
+      settings: {
+        // Allow AWS-SDK as an Unpublished Import
+        "import/core-modules": ["aws-sdk"],
+        "import/parsers": {
+          "@typescript-eslint/parser": [".ts", ".tsx"],
+        },
+        "import/resolver": {
+          // user <root>/tsconfig.json
+          typescript: {
+            alwaysTryTypes: true,
+          },
+        },
+        node: {
+          // Allow AWS-SDK as an Unpublished Import
+          allowModules: ["aws-sdk"],
+          // Make sure we are looking for Typescript files as well
+          tryExtensions: [".js", ".json", ".node", ".ts", ".d.ts"],
+        },
+      },
+    },
+    {
+      // Typescript TEST FILES Override Block
+      extends: [
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:import/typescript",
+        "plugin:node/recommended-module",
+        "plugin:ava/recommended",
+        "plugin:prettier/recommended",
+      ],
+      files: ["test/**/*.ts"],
+      parser: "@typescript-eslint/parser",
+      parserOptions: {
+        project: "tsconfig.eslint.json",
+      },
+      plugins: ["@typescript-eslint", "typescript-sort-keys", "ava"],
+      rules: {
+        // Make sure we don't require .ts and .tsx
+        "import/extensions": [
+          "error",
+          "ignorePackages",
+          {
+            ts: "never",
+            tsx: "never",
+          },
+        ],
+        "import/no-extraneous-dependencies": [
+          "error",
+          { devDependencies: true },
+        ],
+        // Typescript eslint has it's own @typescript-eslint/no-shadow rule
+        "no-shadow": "off",
+        // Don't require items to be published for tests
+        "node/no-unpublished-require": "off",
         // Sort Typescript
         "typescript-sort-keys/interface": "error",
         "typescript-sort-keys/string-enum": "error",
@@ -107,6 +167,7 @@ module.exports = {
   rules: {
     // Array Func prefers array.from, however, Unicorn prefers spread
     "array-func/prefer-array-from": "off",
+    "eslint-comments/disable-enable-pair": "off",
     // The Ecosystem is moving to requiring extension on require()
     "import/extensions": "off",
     // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
