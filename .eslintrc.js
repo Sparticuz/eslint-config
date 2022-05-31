@@ -123,7 +123,7 @@ module.exports = {
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
         // Don't require items to be published for tests
-        "node/no-unpublished-require": "off",
+        "node/no-unpublished-import": "off",
         // Sort Typescript
         "typescript-sort-keys/interface": "error",
         "typescript-sort-keys/string-enum": "error",
