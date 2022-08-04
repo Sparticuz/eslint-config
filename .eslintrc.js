@@ -5,6 +5,7 @@ module.exports = {
     es2017: true,
     es2020: true,
     es2021: true,
+    es2022: true,
     node: true,
   },
   extends: [
@@ -150,7 +151,7 @@ module.exports = {
     },
   ],
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 2022,
     sourceType: "module",
   },
   plugins: [
