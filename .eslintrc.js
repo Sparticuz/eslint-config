@@ -46,7 +46,7 @@ module.exports = {
       files: ["**/*.ts", "**/*.tsx"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "tsconfig.eslint.json",
+        project: "tsconfig.json",
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys"],
       rules: {
@@ -103,7 +103,7 @@ module.exports = {
       files: ["test/**/*.ts"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "tsconfig.eslint.json",
+        project: "tsconfig.json",
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys", "ava"],
       rules: {
