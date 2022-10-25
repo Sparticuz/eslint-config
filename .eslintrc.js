@@ -196,5 +196,7 @@ module.exports = {
     "unicorn/prefer-module": "off",
     // Not ready until Typescript and DefinitelyTyped update their support
     "unicorn/prefer-node-protocol": "off",
+    // Disable switch curly braces
+    "unicorn/switch-case-braces": "off",
   },
 };
