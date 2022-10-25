@@ -169,6 +169,8 @@ module.exports = {
   rules: {
     // Array Func prefers array.from, however, Unicorn prefers spread
     "array-func/prefer-array-from": "off",
+    // Dot notation is disabled via typescript, so disable it here
+    "dot-notation": "off",
     "eslint-comments/disable-enable-pair": "off",
     // The Ecosystem is moving to requiring extension on require()
     "import/extensions": "off",
