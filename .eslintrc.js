@@ -37,6 +37,7 @@ module.exports = {
     {
       // Typescript Override Block
       extends: [
+        "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
@@ -89,6 +90,7 @@ module.exports = {
     {
       // Typescript TEST FILES Override Block
       extends: [
+        "airbnb-typescript/base",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
