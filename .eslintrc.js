@@ -121,10 +121,10 @@ module.exports = {
           "error",
           { devDependencies: true },
         ],
+        // Don't require items to be published for tests
+        "n/no-unpublished-import": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
-        // Don't require items to be published for tests
-        "node/no-unpublished-import": "off",
         // Sort Typescript
         "typescript-sort-keys/interface": "error",
         "typescript-sort-keys/string-enum": "error",
