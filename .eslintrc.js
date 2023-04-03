@@ -10,8 +10,7 @@ module.exports = {
   },
   extends: [
     "airbnb-base",
-    "plugin:import/errors",
-    "plugin:import/warnings",
+    "plugin:import/recommended",
     "plugin:promise/recommended",
     "plugin:n/recommended",
     "plugin:unicorn/recommended",
@@ -31,7 +30,7 @@ module.exports = {
       files: ["test/**/*.js"],
       plugins: ["ava"],
       rules: {
-        "node/no-unpublished-require": "off",
+        "n/no-unpublished-require": "off",
       },
     },
     {
@@ -78,9 +77,8 @@ module.exports = {
         },
         "import/resolver": {
           // user <root>/tsconfig.json
-          typescript: {
-            alwaysTryTypes: true,
-          },
+          node: true,
+          typescript: true,
         },
         node: {
           // Allow AWS-SDK as an Unpublished Import
@@ -174,6 +172,16 @@ module.exports = {
     "eslint-comments/disable-enable-pair": "off",
     // The Ecosystem is moving to requiring extension on require()
     "import/extensions": "off",
+    // Sort the imports
+    "import/order": [
+      "error",
+      {
+        groups: ["builtin", "external", ["parent", "sibling", "index"], "type"],
+        "newlines-between": "always",
+      },
+    ],
+    // Don't prefer the default export
+    "import/prefer-default-export": ["off"],
     // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
     "no-await-in-loop": ["warn"],
     // disallow certain syntax forms, allows for-of
