@@ -10,7 +10,7 @@ module.exports = {
   },
   extends: [
     "airbnb-base",
-    "plugin:i/recommended",
+    "plugin:import/recommended",
     "plugin:promise/recommended",
     "plugin:n/recommended",
     "plugin:unicorn/recommended",
@@ -39,7 +39,7 @@ module.exports = {
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:i/typescript",
+        "plugin:import/typescript",
         "plugin:n/recommended-module",
         "plugin:prettier/recommended",
       ],
@@ -51,7 +51,7 @@ module.exports = {
       plugins: ["@typescript-eslint", "typescript-sort-keys"],
       rules: {
         // Make sure we don't require .ts and .tsx
-        "i/extensions": [
+        "import/extensions": [
           "error",
           "ignorePackages",
           {
@@ -59,7 +59,10 @@ module.exports = {
             tsx: "never",
           },
         ],
-        "i/no-extraneous-dependencies": ["error", { devDependencies: true }],
+        "import/no-extraneous-dependencies": [
+          "error",
+          { devDependencies: true },
+        ],
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
         // Sort Typescript
@@ -68,11 +71,11 @@ module.exports = {
       },
       settings: {
         // Allow AWS-SDK as an Unpublished Import
-        "i/core-modules": ["aws-sdk"],
-        "i/parsers": {
+        "import/core-modules": ["aws-sdk"],
+        "import/parsers": {
           "@typescript-eslint/parser": [".ts", ".tsx"],
         },
-        "i/resolver": {
+        "import/resolver": {
           // user <root>/tsconfig.json
           node: true,
           typescript: true,
@@ -91,7 +94,7 @@ module.exports = {
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:i/typescript",
+        "plugin:import/typescript",
         "plugin:n/recommended-module",
         "plugin:ava/recommended",
         "plugin:prettier/recommended",
@@ -104,7 +107,7 @@ module.exports = {
       plugins: ["@typescript-eslint", "typescript-sort-keys", "ava"],
       rules: {
         // Make sure we don't require .ts and .tsx
-        "i/extensions": [
+        "import/extensions": [
           "error",
           "ignorePackages",
           {
@@ -112,7 +115,10 @@ module.exports = {
             tsx: "never",
           },
         ],
-        "i/no-extraneous-dependencies": ["error", { devDependencies: true }],
+        "import/no-extraneous-dependencies": [
+          "error",
+          { devDependencies: true },
+        ],
         // Don't require items to be published for tests
         "n/no-unpublished-import": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
@@ -123,11 +129,11 @@ module.exports = {
       },
       settings: {
         // Allow AWS-SDK as an Unpublished Import
-        "i/core-modules": ["aws-sdk"],
-        "i/parsers": {
+        "import/core-modules": ["aws-sdk"],
+        "import/parsers": {
           "@typescript-eslint/parser": [".ts", ".tsx"],
         },
-        "i/resolver": {
+        "import/resolver": {
           // user <root>/tsconfig.json
           typescript: {
             alwaysTryTypes: true,
@@ -148,7 +154,7 @@ module.exports = {
   },
   plugins: [
     "array-func",
-    "i",
+    "import",
     "n",
     "prettier",
     "promise",
@@ -165,9 +171,9 @@ module.exports = {
     "dot-notation": "off",
     "eslint-comments/disable-enable-pair": "off",
     // The Ecosystem is moving to requiring extension on require()
-    "i/extensions": "off",
+    "import/extensions": "off",
     // Sort the imports
-    "i/order": [
+    "import/order": [
       "error",
       {
         groups: ["builtin", "external", ["parent", "sibling", "index"], "type"],
@@ -175,7 +181,7 @@ module.exports = {
       },
     ],
     // Don't prefer the default export
-    "i/prefer-default-export": ["off"],
+    "import/prefer-default-export": ["off"],
     // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
     "no-await-in-loop": ["warn"],
     // disallow certain syntax forms, allows for-of
