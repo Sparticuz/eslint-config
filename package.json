@@ -31,5 +31,14 @@
     "eslint": "^8.37.0",
     "prettier": "^2.8.7",
     "typescript": "^5.0.3"
+  },
+  "overrides": {
+    "eslint-plugin-import": "npm:eslint-plugin-i@^2",
+    "eslint-config-airbnb-base": {
+      "eslint-plugin-import": "npm:eslint-plugin-i@^2"
+    },
+    "eslint-import-resolver-typescript": {
+      "eslint-plugin-import": "npm:eslint-plugin-i@^2"
+    }
   }
 }
