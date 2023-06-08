@@ -1,3 +1,4 @@
+/** @type {import("eslint").Linter.Config} */
 module.exports = {
   env: {
     es6: true,
@@ -50,19 +51,6 @@ module.exports = {
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys"],
       rules: {
-        // Make sure we don't require .ts and .tsx
-        "import/extensions": [
-          "error",
-          "ignorePackages",
-          {
-            ts: "never",
-            tsx: "never",
-          },
-        ],
-        "import/no-extraneous-dependencies": [
-          "error",
-          { devDependencies: true },
-        ],
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
         // Sort Typescript
@@ -70,8 +58,6 @@ module.exports = {
         "typescript-sort-keys/string-enum": "error",
       },
       settings: {
-        // Allow AWS-SDK as an Unpublished Import
-        "import/core-modules": ["aws-sdk"],
         "import/parsers": {
           "@typescript-eslint/parser": [".ts", ".tsx"],
         },
@@ -106,19 +92,6 @@ module.exports = {
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys", "ava"],
       rules: {
-        // Make sure we don't require .ts and .tsx
-        "import/extensions": [
-          "error",
-          "ignorePackages",
-          {
-            ts: "never",
-            tsx: "never",
-          },
-        ],
-        "import/no-extraneous-dependencies": [
-          "error",
-          { devDependencies: true },
-        ],
         // Don't require items to be published for tests
         "n/no-unpublished-import": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
@@ -128,16 +101,13 @@ module.exports = {
         "typescript-sort-keys/string-enum": "error",
       },
       settings: {
-        // Allow AWS-SDK as an Unpublished Import
-        "import/core-modules": ["aws-sdk"],
         "import/parsers": {
           "@typescript-eslint/parser": [".ts", ".tsx"],
         },
         "import/resolver": {
           // user <root>/tsconfig.json
-          typescript: {
-            alwaysTryTypes: true,
-          },
+          node: true,
+          typescript: true,
         },
         node: {
           // Allow AWS-SDK as an Unpublished Import
@@ -165,21 +135,11 @@ module.exports = {
   ],
   reportUnusedDisableDirectives: true,
   rules: {
-    // Array Func prefers array.from, however, Unicorn prefers spread
+    // Array Func prefers array.from, however, Unicorn prefers spread. Spread is better
     "array-func/prefer-array-from": "off",
     // Dot notation is disabled via typescript, so disable it here
     "dot-notation": "off",
     "eslint-comments/disable-enable-pair": "off",
-    // The Ecosystem is moving to requiring extension on require()
-    "import/extensions": "off",
-    // Sort the imports
-    "import/order": [
-      "error",
-      {
-        groups: ["builtin", "external", ["parent", "sibling", "index"], "type"],
-        "newlines-between": "always",
-      },
-    ],
     // Don't prefer the default export
     "import/prefer-default-export": ["off"],
     // Await shouldn't be used it a loop, but sometimes it needs to be, just warn
@@ -200,10 +160,6 @@ module.exports = {
         natural: true,
       },
     ],
-    // Not ready for ESM until AWS Lambda Node supports modules
-    "unicorn/prefer-module": "off",
-    // Not ready until Typescript and DefinitelyTyped update their support
-    "unicorn/prefer-node-protocol": "off",
     // Disable switch curly braces
     "unicorn/switch-case-braces": "off",
   },
