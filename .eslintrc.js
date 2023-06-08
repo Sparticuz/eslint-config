@@ -1,4 +1,3 @@
-/* eslint-disable sonarjs/no-duplicate-string */
 module.exports = {
   env: {
     es6: true,
@@ -19,6 +18,7 @@ module.exports = {
     "plugin:sonarjs/recommended",
     "plugin:switch-case/recommended",
     "plugin:eslint-comments/recommended",
+    // eslint-disable-next-line sonarjs/no-duplicate-string
     "plugin:prettier/recommended",
   ],
   // Ignore my dist folders so I don't lint transpiled files
