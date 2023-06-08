@@ -51,6 +51,8 @@ module.exports = {
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys"],
       rules: {
+        // Disable import/extensions because Typescript handles this now
+        "import/extensions": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
         // Sort Typescript
@@ -92,6 +94,8 @@ module.exports = {
       },
       plugins: ["@typescript-eslint", "typescript-sort-keys", "ava"],
       rules: {
+        // Disable import/extensions because Typescript handles this now
+        "import/extensions": "off",
         // Don't require items to be published for tests
         "n/no-unpublished-import": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
