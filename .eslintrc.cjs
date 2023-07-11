@@ -29,7 +29,7 @@ module.exports = {
     {
       // Test Javascript Files Override Block
       extends: ["plugin:ava/recommended"],
-      files: ["test/**/*.js"],
+      files: ["test/**/*.js", "test/**/*.cjs"],
       plugins: ["ava"],
       rules: {
         "n/no-unpublished-require": "off",
