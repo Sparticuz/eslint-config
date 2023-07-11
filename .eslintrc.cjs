@@ -19,7 +19,6 @@ module.exports = {
     "plugin:switch-case/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:no-unsanitized/DOM",
-    "plugin:etc/recommended",
     "plugin:security/recommended",
     "plugin:sonarjs/recommended",
     "prettier",
@@ -39,9 +38,10 @@ module.exports = {
     {
       // Typescript Override Block
       extends: [
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:etc/recommended",
         "plugin:import/typescript",
         "plugin:n/recommended-module",
         "prettier",
@@ -49,9 +49,10 @@ module.exports = {
       files: ["**/*.ts", "**/*.tsx"],
       parser: "@typescript-eslint/parser",
       parserOptions: {
-        project: "tsconfig.json",
+        project: true,
+        tsconfigRoodDir: __dirname,
       },
-      plugins: ["@typescript-eslint"],
+      plugins: ["@typescript-eslint", "etc"],
       rules: {
         // Sort Typescript
         "@typescript-eslint/member-ordering": [
@@ -83,9 +84,10 @@ module.exports = {
     {
       // Typescript TEST FILES Override Block
       extends: [
-        "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        "plugin:@typescript-eslint/recommended-type-checked",
+        "plugin:@typescript-eslint/stylistic-type-checked",
+        "plugin:etc/recommended",
         "plugin:import/typescript",
         "plugin:n/recommended-module",
         "plugin:ava/recommended",
@@ -134,7 +136,6 @@ module.exports = {
   },
   plugins: [
     "array-func",
-    "etc",
     "import",
     "n",
     "no-unsanitized",
