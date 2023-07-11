@@ -19,6 +19,7 @@ module.exports = {
     "plugin:switch-case/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:no-unsanitized/DOM",
+    "plugin:etc/recommended",
     "plugin:security/recommended",
     "plugin:sonarjs/recommended",
     "prettier",
@@ -133,6 +134,7 @@ module.exports = {
   },
   plugins: [
     "array-func",
+    "etc",
     "import",
     "n",
     "no-unsanitized",
