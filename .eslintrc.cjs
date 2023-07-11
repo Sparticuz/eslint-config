@@ -15,10 +15,12 @@ module.exports = {
     "plugin:n/recommended",
     "plugin:unicorn/recommended",
     "plugin:array-func/recommended",
-    "plugin:security/recommended",
-    "plugin:sonarjs/recommended",
+    "plugin:regexp/recommended",
     "plugin:switch-case/recommended",
     "plugin:eslint-comments/recommended",
+    "plugin:no-unsanitized/DOM",
+    "plugin:security/recommended",
+    "plugin:sonarjs/recommended",
     "prettier",
   ],
   // Ignore my dist folders so I don't lint transpiled files
@@ -48,15 +50,17 @@ module.exports = {
       parserOptions: {
         project: "tsconfig.json",
       },
-      plugins: ["@typescript-eslint", "typescript-sort-keys"],
+      plugins: ["@typescript-eslint"],
       rules: {
+        // Sort Typescript
+        "@typescript-eslint/member-ordering": [
+          "warn",
+          { default: { memberTypes: "never", order: "natural" } },
+        ],
         // Disable import/extensions because Typescript handles this now
         "import/extensions": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
-        // Sort Typescript
-        "typescript-sort-keys/interface": "error",
-        "typescript-sort-keys/string-enum": "error",
       },
       settings: {
         "import/parsers": {
@@ -91,17 +95,19 @@ module.exports = {
       parserOptions: {
         project: "tsconfig.json",
       },
-      plugins: ["@typescript-eslint", "typescript-sort-keys", "ava"],
+      plugins: ["@typescript-eslint", "ava"],
       rules: {
+        // Sort Typescript
+        "@typescript-eslint/member-ordering": [
+          "warn",
+          { default: { memberTypes: "never", order: "natural" } },
+        ],
         // Disable import/extensions because Typescript handles this now
         "import/extensions": "off",
         // Don't require items to be published for tests
         "n/no-unpublished-import": "off",
         // Typescript eslint has it's own @typescript-eslint/no-shadow rule
         "no-shadow": "off",
-        // Sort Typescript
-        "typescript-sort-keys/interface": "error",
-        "typescript-sort-keys/string-enum": "error",
       },
       settings: {
         "import/parsers": {
@@ -129,7 +135,9 @@ module.exports = {
     "array-func",
     "import",
     "n",
+    "no-unsanitized",
     "promise",
+    "regexp",
     "security",
     "sonarjs",
     "switch-case",
@@ -156,7 +164,7 @@ module.exports = {
     ],
     "no-unused-vars": ["warn"],
     "sort-keys": [
-      "error",
+      "warn",
       "asc",
       {
         natural: true,
