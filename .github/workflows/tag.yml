@@ -2,13 +2,13 @@ name: Bump Version
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   bump-version:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
       - run: cat ./package.json
@@ -16,7 +16,7 @@ jobs:
         id: version-bump
         uses: phips28/gh-action-bump-version@v10.0.1
         with:
-          tag-prefix: 'v'
+          tag-prefix: "v"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: cat ./package.json
