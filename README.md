@@ -55,7 +55,7 @@ const config = {
     "jsx",
     "typescript",
   ],
-  importOrderTypeScriptVersion: "5.2.2",
+  importOrderTypeScriptVersion: "5.3.3",
   // eslint-disable-next-line n/no-unpublished-require
   plugins: [require.resolve("@ianvs/prettier-plugin-sort-imports")],
   trailingComma: "all",

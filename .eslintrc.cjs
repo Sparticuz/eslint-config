@@ -19,7 +19,7 @@ module.exports = {
     "plugin:switch-case/recommended",
     "plugin:eslint-comments/recommended",
     "plugin:no-unsanitized/DOM",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:sonarjs/recommended",
     "prettier",
   ],
