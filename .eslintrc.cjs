@@ -172,6 +172,7 @@ module.exports = {
       "warn",
       "asc",
       {
+        allowLineSeparatedGroups: true,
         natural: true,
       },
     ],
