@@ -1,6 +1,6 @@
 {
   "name": "@sparticuz/eslint-config",
-  "version": "7.7.1",
+  "version": "7.8.0",
   "description": "Sparticuz's shareable config for eslint",
   "main": "eslint.config.js",
   "type": "module",
