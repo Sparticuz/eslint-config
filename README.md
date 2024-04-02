@@ -4,22 +4,28 @@ My eslint config
 
 I use this on projects that I develop.
 
-## Note
-
-This project uses dependencies instead of peerDependencies. This has been debated here https://github.com/eslint/eslint/issues/3458. I like packaging the plugins with my eslint-config instead of cluttering the package's devDepencencies all up. This also means you will need to add https://www.npmjs.com/package/@rushstack/eslint-patch to the package's .eslintrc.js file. This will change when ESLint Flat Config is stable.
-
 ## Install
 
-`npm install --save-dev @sparticuz/eslint-config`
+`npm install --save-dev @sparticuz/eslint-config typescript-eslint`
 
-## Example .eslintrc.js
+## Example eslint.config.js
 
 ```js
-require("@rushstack/eslint-patch/modern-module-resolution");
+// @ts-check
 
-module.exports = {
-  extends: ["@sparticuz/eslint-config"],
-};
+import myConfig from "@sparticuz/eslint-config";
+import tseslint from "typescript-eslint";
+
+export default tseslint.config(
+  ...myConfig,
+  {
+    languageOptions: {
+      parserOptions: {
+        project: true
+      }
+    }
+  }
+);
 ```
 
 ## Example prettier.config.cjs
