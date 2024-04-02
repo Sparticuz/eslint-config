@@ -40,16 +40,12 @@ export default tseslint.config(
     ],
     languageOptions: {
       ecmaVersion: "latest",
-      parserOptions: {
-        project: true,
-        // @ts-ignore 20.11 +
-        tsconfigRootDir: import.meta.dirname,
-      },
     },
     linterOptions: {
       reportUnusedDisableDirectives: "warn",
     },
     settings: {
+      /*
       "import/parsers": {
         "@typescript-eslint/parser": [".ts", ".tsx"],
       },
@@ -58,9 +54,8 @@ export default tseslint.config(
         node: true,
         typescript: true,
       },
+      */
       node: {
-        // Allow AWS-SDK as an Unpublished Import
-        allowModules: ["aws-sdk"],
         // Make sure we are looking for Typescript files as well
         tryExtensions: [".js", ".json", ".node", ".ts", ".d.ts"],
       },
@@ -93,6 +88,8 @@ export default tseslint.config(
       "no-unused-vars": ["warn"],
       // Disable @typescript-eslint/member-ordering because of perfectionist
       "sort-keys": "off",
+      // For database stuff, I need nulls
+      "unicorn/no-null": "off",
       // Disable switch curly braces
       "unicorn/switch-case-braces": "off",
     },
