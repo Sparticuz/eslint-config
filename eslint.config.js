@@ -107,4 +107,8 @@ export default tseslint.config(
       "n/no-unpublished-import": "off",
     },
   },
+  {
+    files: ["**/*.js"],
+    extends: [tseslint.configs.disableTypeChecked],
+  },
 );
