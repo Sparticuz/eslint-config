@@ -1,15 +1,18 @@
-// @ts-check
 import js from "@eslint/js";
-import tseslint from "typescript-eslint";
 import prettierConfig from "eslint-config-prettier";
-import securityPlugin from "eslint-plugin-security";
-import nodePlugin from "eslint-plugin-n";
-import unicornPlugin from "eslint-plugin-unicorn";
+// @ts-expect-error There are no types
 import arrayFuncPlugin from "eslint-plugin-array-func";
+import nodePlugin from "eslint-plugin-n";
+// @ts-expect-error There are no types
+import perfectionistNatural from "eslint-plugin-perfectionist/configs/recommended-natural";
 import * as regexpPlugin from "eslint-plugin-regexp";
-// @ts-ignore https://github.com/azat-io/eslint-plugin-perfectionist/issues/90
-import perfectionistNatural from 'eslint-plugin-perfectionist/configs/recommended-natural'
+// @ts-expect-error There are no types, Security works the eslint 9
+import securityPlugin from "eslint-plugin-security";
+// @ts-expect-error There are no types
+import unicornPlugin from "eslint-plugin-unicorn";
+import vitest from "eslint-plugin-vitest";
 import globals from "globals";
+import tseslint from "typescript-eslint";
 
 /**
  *  Plugins to re-implement when they support Flat Config
@@ -19,7 +22,7 @@ import globals from "globals";
  * "eslint-plugin-promise": https://github.com/eslint-community/eslint-plugin-promise/issues/449
  * "eslint-plugin-sonarjs": https://github.com/SonarSource/eslint-plugin-sonarjs/issues/454
  *
- *  Keep? Ava, Import
+ *  Import will eventually come back
  */
 
 export default tseslint.config(
@@ -27,9 +30,9 @@ export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   nodePlugin.configs["flat/recommended"],
-  // @ts-ignore
   unicornPlugin.configs["flat/recommended"],
   arrayFuncPlugin.configs.recommended,
+  // @ts-expect-error This is the correct type
   regexpPlugin.configs["flat/recommended"],
   securityPlugin.configs.recommended,
   perfectionistNatural,
@@ -37,11 +40,46 @@ export default tseslint.config(
   {
     languageOptions: {
       globals: {
-        ...globals.node
-      }
+        ...globals.node,
+      },
+      parserOptions: {
+        project: true,
+      },
     },
     linterOptions: {
       reportUnusedDisableDirectives: "warn",
+    },
+    rules: {
+      // Disable import/extensions because Typescript handles this now
+      // "import/extensions": "off",
+      /* Disable @typescript-eslint/member-ordering because of perfectionist */
+      "@typescript-eslint/member-ordering": "off",
+      "@typescript-eslint/no-unused-vars": "warn",
+      /* Array Func prefers array.from, however, Unicorn prefers spread. Spread is better */
+      "array-func/prefer-array-from": "off",
+      /* Dot notation is disabled via typescript, so disable it here */
+      // https://typescript-eslint.io/rules/dot-notation/
+      "dot-notation": "off",
+      // "eslint-comments/disable-enable-pair": "off",
+      // Don't prefer the default export
+      // "import/prefer-default-export": ["off"],
+      /* Typescript eslint has it's own @typescript-eslint/no-shadow rule */
+      "no-shadow": "off",
+      /* Disable no-unused-vars because of @typescript-eslint/no-unused-vars */
+      "no-unused-vars": "off",
+      /* Make sure nulls are last in types */
+      "perfectionist/sort-union-types": [
+        "error",
+        {
+          "nullable-last": true,
+        },
+      ],
+      /* Disable @typescript-eslint/member-ordering because of perfectionist */
+      "sort-keys": "off",
+      /* For database stuff, I need nulls */
+      "unicorn/no-null": "off",
+      /* Disable switch curly braces */
+      "unicorn/switch-case-braces": "off",
     },
     settings: {
       /*
@@ -56,59 +94,53 @@ export default tseslint.config(
       */
       node: {
         // Make sure we are looking for Typescript files as well
-        tryExtensions: [".js", ".jsx", ".mjs", ".cjs", ".ts", ".tsx", ".json", ".d.ts",],
+        tryExtensions: [
+          ".js",
+          ".jsx",
+          ".mjs",
+          ".cjs",
+          ".ts",
+          ".tsx",
+          ".json",
+          ".d.ts",
+        ],
       },
-    },
-    rules: {
-      // Disable import/extensions because Typescript handles this now
-      // "import/extensions": "off",
-      /* Disable @typescript-eslint/member-ordering because of perfectionist */
-      "@typescript-eslint/member-ordering": "off",
-      /* Typescript eslint has it's own @typescript-eslint/no-shadow rule */
-      "no-shadow": "off",
-      /* Array Func prefers array.from, however, Unicorn prefers spread. Spread is better */
-      "array-func/prefer-array-from": "off",
-      /* Dot notation is disabled via typescript, so disable it here */
-      // https://typescript-eslint.io/rules/dot-notation/
-      "dot-notation": "off",
-      // "eslint-comments/disable-enable-pair": "off",
-      // Don't prefer the default export
-      // "import/prefer-default-export": ["off"],
-      /* disallow certain syntax forms, allows for-of
-       * http://eslint.org/docs/rules/no-restricted-syntax */
-      "no-restricted-syntax": [
-        "error",
-        "ForInStatement",
-        "LabeledStatement",
-        "WithStatement",
-      ],
-      /* Disable no-unused-vars because of @typescript-eslint/no-unused-vars */
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": "warn",
-      /* Make sure nulls are last in types */
-      "perfectionist/sort-union-types": [
-        "error",
-        {
-          "nullable-last": true,
-        }
-      ],
-      /* Disable @typescript-eslint/member-ordering because of perfectionist */
-      "sort-keys": "off",
-      /* For database stuff, I need nulls */
-      "unicorn/no-null": "off",
-      /* Disable switch curly braces */
-      "unicorn/switch-case-braces": "off",
     },
   },
   {
-    files: ["tests/**/*"],
+    files: ["tests/**", "test/**"],
+    languageOptions: {
+      globals: {
+        ...vitest.environments.env.globals,
+      },
+    },
+    plugins: {
+      vitest,
+    },
     rules: {
+      // @ts-expect-error Recommended does exist
+      ...vitest.configs.recommended.rules,
       /* Don't require items to be published for tests */
       "n/no-unpublished-import": "off",
     },
+    settings: {
+      vitest: {
+        typecheck: true,
+      },
+    },
   },
   {
-    files: ["**/*.js"],
+    // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
+    files: ["*.js", "eslint.config.js"],
+  },
+  {
+    files: ["eslint.config.js"],
+    rules: {
+      // Everything should be included in @sparticuz/eslint-config's dependencies.
+      "n/no-extraneous-import": "off",
+      // Everything should be included in @sparticuz/eslint-config's dependencies.
+      "n/no-unpublished-import": "off",
+    },
   },
 );
