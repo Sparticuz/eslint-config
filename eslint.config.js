@@ -1,4 +1,6 @@
+// @ts-expect-error There are no types
 import js from "@eslint/js";
+// @ts-expect-error There are no types
 import prettierConfig from "eslint-config-prettier";
 // @ts-expect-error There are no types
 import arrayFuncPlugin from "eslint-plugin-array-func";
@@ -132,10 +134,11 @@ export default tseslint.config(
   {
     // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
-    files: ["*.js", "eslint.config.js"],
+    files: ["*.js"],
   },
   {
-    files: ["eslint.config.js"],
+    extends: [tseslint.configs.disableTypeChecked],
+    files: ["eslint.config.js", "vitest.config.ts"],
     rules: {
       // Everything should be included in @sparticuz/eslint-config's dependencies.
       "n/no-extraneous-import": "off",
