@@ -78,6 +78,17 @@ export default tseslint.config(
       ],
       /* Disable @typescript-eslint/member-ordering because of perfectionist */
       "sort-keys": "off",
+      /* I want to use named imports for path */
+      "unicorn/import-style": [
+        "error",
+        {
+          styles: {
+            "node:path": {
+              named: true,
+            },
+          },
+        },
+      ],
       /* For database stuff, I need nulls */
       "unicorn/no-null": "off",
       /* Disable switch curly braces */
@@ -110,18 +121,14 @@ export default tseslint.config(
     },
   },
   {
+    extends: [vitest.configs.recommended],
     files: ["tests/**", "test/**"],
     languageOptions: {
       globals: {
         ...vitest.environments.env.globals,
       },
     },
-    plugins: {
-      vitest,
-    },
     rules: {
-      // @ts-expect-error Recommended does exist
-      ...vitest.configs.recommended.rules,
       /* Don't require items to be published for tests */
       "n/no-unpublished-import": "off",
     },
@@ -134,14 +141,12 @@ export default tseslint.config(
   {
     // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
-    files: ["*.js"],
+    files: ["**/*.js"],
   },
   {
     extends: [tseslint.configs.disableTypeChecked],
     files: ["eslint.config.js", "vitest.config.ts"],
     rules: {
-      // Everything should be included in @sparticuz/eslint-config's dependencies.
-      "n/no-extraneous-import": "off",
       // Everything should be included in @sparticuz/eslint-config's dependencies.
       "n/no-unpublished-import": "off",
     },

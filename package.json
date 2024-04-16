@@ -10,16 +10,17 @@
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "license": "ISC",
   "dependencies": {
+    "@eslint/js": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-array-func": "^5.0.1",
-    "eslint-plugin-n": "^17.2.0",
-    "eslint-plugin-perfectionist": "^2.8.0",
+    "eslint-plugin-n": "^17.2.1",
+    "eslint-plugin-perfectionist": "^2.9.0",
     "eslint-plugin-regexp": "^2.5.0",
     "eslint-plugin-security": "^3.0.0",
     "eslint-plugin-unicorn": "^52.0.0",
-    "eslint-plugin-vitest": "^0.5.1",
+    "eslint-plugin-vitest": "^0.5.3",
     "globals": "^15.0.0",
-    "typescript-eslint": "^7.6.0"
+    "typescript-eslint": "^7.7.0"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
