@@ -35,7 +35,7 @@ export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   nodePlugin.configs["flat/recommended"],
-  comments.configs.recommended,
+  comments.recommended,
   promisePlugin.configs["flat/recommended"],
   unicornPlugin.configs["flat/recommended"],
   arrayFuncPlugin.configs.recommended,
@@ -57,33 +57,64 @@ export default tseslint.config(
       reportUnusedDisableDirectives: "warn",
     },
     rules: {
-      // Disable import/extensions because Typescript handles this now
+      /**
+       * The allowWholeFile option lets you allow disabling rules for the entire file while
+       * still catching "open" eslint-disable directives in the middle of a file.
+       */
+      "@eslint-community/eslint-comments/disable-enable-pair": [
+        "error",
+        { allowWholeFile: true },
+      ],
+      /**
+       * Disable import/extensions because Typescript handles this now
+       */
       // "import/extensions": "off",
-      /* Disable @typescript-eslint/member-ordering because of perfectionist */
+      /**
+       * Disable `@typescript-eslint/member-ordering` because of perfectionist
+       */
       "@typescript-eslint/member-ordering": "off",
+      /**
+       * Set `@typescript-eslint/no-unused-vars` to just warn
+       */
       "@typescript-eslint/no-unused-vars": "warn",
-      /* Array Func prefers array.from, however, Unicorn prefers spread. Spread is better */
+      /**
+       * Array Func prefers array.from, however, Unicorn prefers spread. Spread is better
+       */
       "array-func/prefer-array-from": "off",
-      /* Dot notation is disabled via typescript, so disable it here */
-      // https://typescript-eslint.io/rules/dot-notation/
+      /**
+       * Dot notation is disabled via typescript, so disable it here
+       * https://typescript-eslint.io/rules/dot-notation/
+       */
       "dot-notation": "off",
-      // "eslint-comments/disable-enable-pair": "off",
-      // Don't prefer the default export
+      /**
+       * Don't prefer the default export
+       */
       // "import/prefer-default-export": ["off"],
-      /* Typescript eslint has it's own @typescript-eslint/no-shadow rule */
+      /**
+       * Typescript eslint has it's own `@typescript-eslint/no-shadow` rule.
+       * Disable the eslint rule
+       */
       "no-shadow": "off",
-      /* Disable no-unused-vars because of @typescript-eslint/no-unused-vars */
+      /**
+       * Disable no-unused-vars because of `@typescript-eslint/no-unused-vars`
+       */
       "no-unused-vars": "off",
-      /* Make sure nulls are last in types */
+      /**
+       * Make sure nulls are last in types
+       */
       "perfectionist/sort-union-types": [
         "error",
         {
           "nullable-last": true,
         },
       ],
-      /* Disable @typescript-eslint/member-ordering because of perfectionist */
+      /**
+       * Disable `@typescript-eslint/member-ordering` because of perfectionist
+       */
       "sort-keys": "off",
-      /* I want to use named imports for path */
+      /**
+       * I want to use named imports for path
+       */
       "unicorn/import-style": [
         "error",
         {
@@ -94,9 +125,13 @@ export default tseslint.config(
           },
         },
       ],
-      /* For database stuff, I need nulls */
+      /**
+       * For database stuff, I need nulls
+       */
       "unicorn/no-null": "off",
-      /* Disable switch curly braces */
+      /**
+       * Disable switch curly braces
+       */
       "unicorn/switch-case-braces": "off",
     },
     settings: {
@@ -134,7 +169,9 @@ export default tseslint.config(
       },
     },
     rules: {
-      /* Don't require items to be published for tests */
+      /**
+       * Don't require items to be published for tests
+       */
       "n/no-unpublished-import": "off",
     },
     settings: {
