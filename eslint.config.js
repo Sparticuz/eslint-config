@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 // @ts-expect-error There are no types, Supports es9 on upgrade to @9
 import js from "@eslint/js";
 // @ts-expect-error There are no types, should be es9 compatible because there is no plugin
@@ -15,17 +16,16 @@ import securityPlugin from "eslint-plugin-security";
 // @ts-expect-error There are no types, supports es9
 import unicornPlugin from "eslint-plugin-unicorn";
 import vitest from "eslint-plugin-vitest"; //supports es9 since 0.2.8
+// @ts-expect-error There are no types
+import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
+import sonarJSPlugin from "eslint-plugin-sonarjs";
 import globals from "globals";
 // Does not support eslint 9, pending v8+
 import tseslint from "typescript-eslint";
-
 /**
  *  Plugins to re-implement when they support Flat Config
  * "eslint-plugin-deprecation": https://github.com/gund/eslint-plugin-deprecation/pull/79,
- * "eslint-plugin-eslint-comments": https://github.com/eslint-community/eslint-plugin-eslint-comments/pull/200
  * "eslint-plugin-no-unsanitized": https://github.com/mozilla/eslint-plugin-no-unsanitized/issues/234,
- * "eslint-plugin-promise": https://github.com/eslint-community/eslint-plugin-promise/issues/449
- * "eslint-plugin-sonarjs": https://github.com/SonarSource/eslint-plugin-sonarjs/issues/454
  *
  *  Import will eventually come back
  */
@@ -35,10 +35,12 @@ export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   nodePlugin.configs["flat/recommended"],
+  comments.configs.recommended,
   promisePlugin.configs["flat/recommended"],
   unicornPlugin.configs["flat/recommended"],
   arrayFuncPlugin.configs.recommended,
   regexpPlugin.configs["flat/recommended"],
+  sonarJSPlugin.configs.recommended,
   securityPlugin.configs.recommended,
   perfectionistNatural,
   prettierConfig,
