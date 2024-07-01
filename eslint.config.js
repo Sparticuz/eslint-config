@@ -1,19 +1,22 @@
-// @ts-expect-error There are no types
+// @ts-expect-error There are no types, Supports es9 on upgrade to @9
 import js from "@eslint/js";
-// @ts-expect-error There are no types
+// @ts-expect-error There are no types, should be es9 compatible because there is no plugin
 import prettierConfig from "eslint-config-prettier";
-// @ts-expect-error There are no types
+// @ts-expect-error There are no types, no details about es9
 import arrayFuncPlugin from "eslint-plugin-array-func";
-import nodePlugin from "eslint-plugin-n";
-// @ts-expect-error There are no types
+import nodePlugin from "eslint-plugin-n"; // Supports es9 v17+
+// @ts-expect-error There are no types, No support for es9 yet, https://github.com/azat-io/eslint-plugin-perfectionist/issues/90
 import perfectionistNatural from "eslint-plugin-perfectionist/configs/recommended-natural";
-import * as regexpPlugin from "eslint-plugin-regexp";
-// @ts-expect-error There are no types, Security works the eslint 9
+// @ts-expect-error There are no types, Supports es9
+import promisePlugin from "eslint-plugin-promise";
+import * as regexpPlugin from "eslint-plugin-regexp"; // Pending 2.6.0+
+// @ts-expect-error There are no types, Supports es9
 import securityPlugin from "eslint-plugin-security";
-// @ts-expect-error There are no types
+// @ts-expect-error There are no types, supports es9
 import unicornPlugin from "eslint-plugin-unicorn";
-import vitest from "eslint-plugin-vitest";
+import vitest from "eslint-plugin-vitest"; //supports es9 since 0.2.8
 import globals from "globals";
+// Does not support eslint 9, pending v8+
 import tseslint from "typescript-eslint";
 
 /**
@@ -32,9 +35,9 @@ export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   nodePlugin.configs["flat/recommended"],
+  promisePlugin.configs["flat/recommended"],
   unicornPlugin.configs["flat/recommended"],
   arrayFuncPlugin.configs.recommended,
-  // @ts-expect-error This is the correct type
   regexpPlugin.configs["flat/recommended"],
   securityPlugin.configs.recommended,
   perfectionistNatural,

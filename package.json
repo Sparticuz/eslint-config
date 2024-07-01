@@ -13,20 +13,21 @@
     "@eslint/js": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-array-func": "^5.0.1",
-    "eslint-plugin-n": "^17.2.1",
-    "eslint-plugin-perfectionist": "^2.9.0",
-    "eslint-plugin-regexp": "^2.5.0",
-    "eslint-plugin-security": "^3.0.0",
-    "eslint-plugin-unicorn": "^52.0.0",
-    "eslint-plugin-vitest": "^0.5.3",
-    "globals": "^15.0.0",
-    "typescript-eslint": "^7.7.0"
+    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-perfectionist": "^2.11.0",
+    "eslint-plugin-regexp": "^2.6.0",
+    "eslint-plugin-security": "^3.0.1",
+    "eslint-plugin-unicorn": "^54.0.0",
+    "eslint-plugin-vitest": "^0.5.4",
+    "globals": "^15.7.0",
+    "typescript-eslint": "^7.14.1"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@tsconfig/strictest": "^2.0.5",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.4.5"
+    "eslint-plugin-promise": "^6.4.0",
+    "prettier": "^3.3.2",
+    "typescript": "^5.5.2"
   }
 }
