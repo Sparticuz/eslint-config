@@ -6,7 +6,7 @@ import prettierConfig from "eslint-config-prettier";
 // @ts-expect-error There are no types, no details about es9
 import arrayFuncPlugin from "eslint-plugin-array-func";
 import nodePlugin from "eslint-plugin-n"; // Supports es9 v17+
-// @ts-expect-error There are no types, No support for es9 yet, https://github.com/azat-io/eslint-plugin-perfectionist/issues/90
+// @ts-expect-error There are no types, No support for es9 yet, https://github.com/azat-io/eslint-plugin-perfectionist/pull/113
 import perfectionistNatural from "eslint-plugin-perfectionist/configs/recommended-natural";
 // @ts-expect-error There are no types, Supports es9
 import promisePlugin from "eslint-plugin-promise";
@@ -100,14 +100,16 @@ export default tseslint.config(
        */
       "no-unused-vars": "off",
       /**
+       * Reset sorting by a new line
+       */
+      "perfectionist/sort-objects": [
+        "error",
+        { "partition-by-new-line": true },
+      ],
+      /**
        * Make sure nulls are last in types
        */
-      "perfectionist/sort-union-types": [
-        "error",
-        {
-          "nullable-last": true,
-        },
-      ],
+      "perfectionist/sort-union-types": ["error", { "nullable-last": true }],
       /**
        * Disable `@typescript-eslint/member-ordering` because of perfectionist
        */

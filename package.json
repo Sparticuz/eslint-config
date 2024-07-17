@@ -20,8 +20,8 @@
     "eslint-plugin-sonarjs": "^1.0.3",
     "eslint-plugin-unicorn": "^54.0.0",
     "eslint-plugin-vitest": "^0.5.4",
-    "globals": "^15.7.0",
-    "typescript-eslint": "^7.14.1"
+    "globals": "^15.8.0",
+    "typescript-eslint": "^7.16.1"
   },
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
@@ -29,7 +29,7 @@
     "@tsconfig/strictest": "^2.0.5",
     "eslint": "^8.57.0",
     "eslint-plugin-promise": "^6.4.0",
-    "prettier": "^3.3.2",
-    "typescript": "^5.5.2"
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.3"
   }
 }
