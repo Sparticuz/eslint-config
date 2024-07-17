@@ -11,10 +11,12 @@
   "license": "ISC",
   "dependencies": {
     "@eslint/js": "^8.57.0",
+    "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-array-func": "^5.0.1",
     "eslint-plugin-n": "^17.9.0",
     "eslint-plugin-perfectionist": "^2.11.0",
+    "eslint-plugin-promise": "^6.4.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-sonarjs": "^1.0.3",
@@ -24,11 +26,9 @@
     "typescript-eslint": "^7.16.1"
   },
   "devDependencies": {
-    "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
     "@tsconfig/node20": "^20.1.4",
     "@tsconfig/strictest": "^2.0.5",
     "eslint": "^8.57.0",
-    "eslint-plugin-promise": "^6.4.0",
     "prettier": "^3.3.3",
     "typescript": "^5.5.3"
   }

@@ -20,8 +20,7 @@ import vitest from "eslint-plugin-vitest"; //supports es9 since 0.2.8
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 import sonarJSPlugin from "eslint-plugin-sonarjs";
 import globals from "globals";
-// Does not support eslint 9, pending v8+
-import tseslint from "typescript-eslint";
+import tseslint from "typescript-eslint"; // Pending v8+
 /**
  *  Plugins to re-implement when they support Flat Config
  * "eslint-plugin-deprecation": https://github.com/gund/eslint-plugin-deprecation/pull/79,
