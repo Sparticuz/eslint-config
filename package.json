@@ -2,34 +2,41 @@
   "name": "@sparticuz/eslint-config",
   "version": "8.2.5",
   "description": "Sparticuz's shareable config for eslint",
-  "main": "eslint.config.js",
   "type": "module",
+  "exports": {
+    ".": "./eslint.config.js"
+  },
   "scripts": {
-    "test": "eslint eslint.config.js"
+    "build": "rm -rf dist/** && tsc -p tsconfig.build.json",
+    "test": "eslint src/**/*.ts"
   },
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "license": "ISC",
   "dependencies": {
-    "@eslint/js": "^8.57.0",
     "@eslint-community/eslint-plugin-eslint-comments": "^4.3.0",
+    "@eslint/js": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-array-func": "^5.0.1",
     "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-no-unsanitized": "^4.0.2",
     "eslint-plugin-perfectionist": "^2.11.0",
-    "eslint-plugin-promise": "^6.4.0",
+    "eslint-plugin-promise": "^7.0.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-security": "^3.0.1",
-    "eslint-plugin-sonarjs": "^1.0.3",
+    "eslint-plugin-sonarjs": "^1.0.4",
     "eslint-plugin-unicorn": "^54.0.0",
     "eslint-plugin-vitest": "^0.5.4",
     "globals": "^15.8.0",
-    "typescript-eslint": "^7.16.1"
+    "typescript-eslint": "^7.17.0"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@tsconfig/strictest": "^2.0.5",
+    "@types/eslint__js": "^8.42.3",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint-plugin-security": "^3.0.0",
     "eslint": "^8.57.0",
     "prettier": "^3.3.3",
-    "typescript": "^5.5.3"
+    "typescript": "^5.5.4"
   }
 }

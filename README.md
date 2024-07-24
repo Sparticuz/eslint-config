@@ -1,7 +1,5 @@
 # eslint-config
 
-My eslint config
-
 I use this on projects that I develop.
 
 Included in the readme is also Typescript, Prettier, Vitest configs for bootstrapping new projects.
@@ -74,7 +72,6 @@ export default config;
 
 ```json
 {
-  // extend your base config to share compilerOptions, etc
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
