@@ -1,0 +1,6 @@
+src
+.editorconfig
+.github
+prettier.config.js
+tsconfig.json
+tsconfig.build.json
