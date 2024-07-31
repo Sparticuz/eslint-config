@@ -10,14 +10,7 @@ export default tseslint.config(
       /**
        * Reset sorting by a new line
        */
-      "perfectionist/sort-objects": [
-        "error",
-        { "partition-by-new-line": true },
-      ],
-      /**
-       * Make sure nulls are last in types
-       */
-      "perfectionist/sort-union-types": ["error", { "nullable-last": true }],
+      "perfectionist/sort-objects": ["error", { partitionByNewLine: true }],
     },
   },
 );

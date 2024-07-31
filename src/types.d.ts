@@ -11,7 +11,6 @@ declare module "eslint-plugin-no-unsanitized" {
     recommended: FlatConfig.Config;
   };
 }
-declare module "eslint-plugin-perfectionist/configs/recommended-natural";
 declare module "eslint-plugin-promise" {
   const configs: {
     "flat/recommended": FlatConfig.Config;

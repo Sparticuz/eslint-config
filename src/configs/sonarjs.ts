@@ -1,4 +1,6 @@
 import sonarJSPlugin from "eslint-plugin-sonarjs";
-import tseslint from "typescript-eslint";
+import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
-export default tseslint.config(sonarJSPlugin.configs.recommended);
+export default tseslint.config(
+  sonarJSPlugin.configs.recommended as ConfigWithExtends,
+);

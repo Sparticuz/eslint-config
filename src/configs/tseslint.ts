@@ -4,17 +4,12 @@ export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   {
-    rules: {
-      /**
-       * Set `@typescript-eslint/no-unused-vars` to just warn
-       */
-      "@typescript-eslint/no-unused-vars": "warn",
-      /**
-       * Disable because of perfectionist
-       */
-      "@typescript-eslint/sort-type-constituents": "off",
-      "@typescript-eslint/member-ordering": "off",
+    languageOptions: {
+      parserOptions: {
+        projectService: true,
+      },
     },
+    rules: {},
     settings: {
       node: {
         // Make sure we are looking for Typescript files as well

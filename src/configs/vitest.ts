@@ -9,15 +9,15 @@ export default tseslint.config({
       ...vitest.environments.env.globals,
     },
   },
-  settings: {
-    vitest: {
-      typecheck: true,
-    },
-  },
   rules: {
     /**
      * Don't require items to be published for tests
      */
     "n/no-unpublished-import": "off",
+  },
+  settings: {
+    vitest: {
+      typecheck: true,
+    },
   },
 });
