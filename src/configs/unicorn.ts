@@ -1,5 +1,5 @@
 import unicornPlugin from "eslint-plugin-unicorn";
-import tseslint, { ConfigWithExtends } from "typescript-eslint"; // Pending v8+
+import tseslint, { ConfigWithExtends } from "typescript-eslint";
 
 export default tseslint.config(
   unicornPlugin.configs["flat/recommended"] as ConfigWithExtends,

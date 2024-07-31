@@ -1,4 +1,4 @@
-import tseslint from "typescript-eslint"; // Pending v8+
+import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,

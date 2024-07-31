@@ -1,5 +1,5 @@
-import vitest from "eslint-plugin-vitest"; //supports es9 since 0.2.8
-import tseslint from "typescript-eslint"; // Pending v8+
+import vitest from "eslint-plugin-vitest";
+import tseslint from "typescript-eslint";
 
 export default tseslint.config({
   extends: [vitest.configs.recommended],
@@ -13,5 +13,11 @@ export default tseslint.config({
     vitest: {
       typecheck: true,
     },
+  },
+  rules: {
+    /**
+     * Don't require items to be published for tests
+     */
+    "n/no-unpublished-import": "off",
   },
 });
