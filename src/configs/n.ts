@@ -1,5 +1,5 @@
-import tseslint, { ConfigWithExtends } from "typescript-eslint"; // Pending v8+
-import nodePlugin from "eslint-plugin-n"; // Supports es9 v17+
+import tseslint, { ConfigWithExtends } from "typescript-eslint";
+import nodePlugin from "eslint-plugin-n";
 
 export default tseslint.config(
   nodePlugin.configs["flat/recommended"] as ConfigWithExtends,

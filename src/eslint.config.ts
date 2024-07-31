@@ -9,6 +9,7 @@ import regexpConfig from "./configs/regexp.js";
 import sonarJsConfig from "./configs/sonarjs.js";
 import securityConfig from "./configs/security.js";
 import prettierConfig from "./configs/prettier.js";
+import vitestConfig from "./configs/vitest.js";
 
 /**
  *  Plugins to re-implement when they support Flat Config
@@ -29,4 +30,5 @@ export default tseslint.config(
   ...sonarJsConfig,
   ...securityConfig,
   ...prettierConfig,
+  ...vitestConfig,
 );

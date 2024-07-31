@@ -6,7 +6,6 @@
     "declaration": true,
     "declarationMap": true,
     "exactOptionalPropertyTypes": false,
-    "lib": ["DOM", "ES2023"],
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "noUnusedLocals": false,
@@ -14,5 +13,6 @@
     "resolveJsonModule": true,
     "sourceMap": true
   },
-  "include": ["src", "test"]
+  "include": ["src", "test"],
+  "exclude": ["node_modules", "dist"]
 }
