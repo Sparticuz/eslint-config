@@ -4,11 +4,12 @@
   "description": "Sparticuz's shareable config for eslint",
   "type": "module",
   "exports": {
-    ".": "./eslint.config.js"
+    ".": "./dist/eslint.config.js"
   },
   "scripts": {
     "build": "rm -rf dist/** && tsc -p tsconfig.build.json",
-    "test": "eslint src/**/*.ts"
+    "lint": "eslint \"**/*.?(c|m)[jt]s?(x)\"",
+    "test": "npm run lint"
   },
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "license": "ISC",
