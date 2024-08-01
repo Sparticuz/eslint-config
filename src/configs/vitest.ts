@@ -3,7 +3,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config({
   extends: [vitest.configs.recommended],
-  files: ["tests/**", "test/**"],
+  files: ["tests/**", "test/**", "vitest.config.ts"],
   languageOptions: {
     globals: {
       ...vitest.environments.env.globals,
