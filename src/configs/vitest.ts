@@ -14,6 +14,15 @@ export default tseslint.config({
      * Don't require items to be published for tests
      */
     "n/no-unpublished-import": "off",
+    /**
+     * Vite will already be there because of vitest
+     */
+    "n/no-extraneous-import": [
+      "error",
+      {
+        allowModules: ["vite"],
+      },
+    ],
   },
   settings: {
     vitest: {
