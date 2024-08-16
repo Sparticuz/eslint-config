@@ -1,5 +1,5 @@
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
-import tseslint, { ConfigWithExtends } from "typescript-eslint";
+import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
 export default tseslint.config(comments.recommended as ConfigWithExtends, {
   rules: {

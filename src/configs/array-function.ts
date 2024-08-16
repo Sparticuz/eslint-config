@@ -1,5 +1,5 @@
 import arrayFuncPlugin from "eslint-plugin-array-func";
-import tseslint, { ConfigWithExtends } from "typescript-eslint";
+import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
 export default tseslint.config(
   arrayFuncPlugin.configs.recommended as ConfigWithExtends,

@@ -1,8 +1,8 @@
 import js from "@eslint/js";
 import globals from "globals";
-import tseslint from "typescript-eslint";
+import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
-export default tseslint.config(js.configs.recommended, {
+export default tseslint.config(js.configs.recommended as ConfigWithExtends, {
   languageOptions: {
     globals: {
       ...globals.node,

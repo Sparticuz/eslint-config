@@ -1,5 +1,5 @@
 import nodePlugin from "eslint-plugin-n";
-import tseslint, { ConfigWithExtends } from "typescript-eslint";
+import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
 export default tseslint.config(
   nodePlugin.configs["flat/recommended"] as ConfigWithExtends,
