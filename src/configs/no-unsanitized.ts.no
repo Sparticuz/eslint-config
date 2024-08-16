@@ -1,0 +1,10 @@
+import nounsanitized from "eslint-plugin-no-unsanitized";
+import tseslint, { ConfigWithExtends } from "typescript-eslint";
+import { fixupConfigRules, fixupPluginRules } from "@eslint/compat";
+
+export default tseslint.config({
+  plugins: {
+    "no-unsanitized": fixupPluginRules(nounsanitized),
+  },
+  rules: fixupConfigRules(nounsanitized.configs.DOM.rules),
+});

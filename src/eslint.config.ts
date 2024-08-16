@@ -2,6 +2,7 @@ import tseslint from "typescript-eslint";
 
 import arrayFunctionConfig from "./configs/array-function.js";
 import eslintJSConfig from "./configs/eslint.js";
+import eslintCommentsConfig from "./configs/eslint-comments.js";
 import nodeConfig from "./configs/n.js";
 import perfectionistConfig from "./configs/perfectionist.js";
 import prettierConfig from "./configs/prettier.js";
@@ -15,14 +16,17 @@ import vitestConfig from "./configs/vitest.js";
 
 /**
  *  Plugins to re-implement when they support Flat Config
- * "eslint-plugin-deprecation": https://github.com/gund/eslint-plugin-deprecation/pull/79,
- *    This may be migrated into tseslint 8
  *
  *  eslint-plugin-import will eventually come back...unfortunantly
+ *
+ * // "eslint-plugin-no-unsanitized": "^4.0.2",
+ * // import noUnsanitizedConfig from "./configs/no-unsanitized.js";
+ * // ...noUnsanitizedConfig,
  */
 
 export default tseslint.config(
   ...eslintJSConfig,
+  ...eslintCommentsConfig,
   ...nodeConfig,
   ...tseslintConfig,
   ...promiseConfig,
