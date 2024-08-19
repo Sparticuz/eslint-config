@@ -11,7 +11,8 @@
     "noUnusedLocals": false,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "verbatimModuleSyntax": true
   },
   "include": ["src", "test", "vitest.config.ts"],
   "exclude": ["node_modules", "dist"]

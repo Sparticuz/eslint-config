@@ -1,8 +1,8 @@
-import vitest from "eslint-plugin-vitest";
+import vitest from "@vitest/eslint-plugin";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config({
-  extends: [vitest.configs.recommended],
+  ...vitest.configs.recommended,
   files: ["tests/**", "test/**", "vitest.config.ts"],
   languageOptions: {
     globals: {

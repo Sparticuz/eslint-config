@@ -27,7 +27,7 @@ import tseslint from "typescript-eslint";
 
 export default tseslint.config(
   {
-    ignores: ["dist/**/*"],
+    ignores: ["dist"],
   },
   ...myConfig,
 );
@@ -56,15 +56,16 @@ export default config;
     "declaration": true,
     "declarationMap": true,
     "exactOptionalPropertyTypes": false,
-    "lib": ["DOM", "ES2023"],
     "module": "NodeNext",
     "moduleResolution": "nodenext",
     "noUnusedLocals": false,
     "outDir": "dist",
     "resolveJsonModule": true,
-    "sourceMap": true
+    "sourceMap": true,
+    "verbatimModuleSyntax": true
   },
-  "include": ["src", "test"]
+  "include": ["src", "test", "vitest.config.ts"],
+  "exclude": ["node_modules", "dist"]
 }
 ```
 
@@ -91,8 +92,8 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     coverage: {
-      reportOnFailure: true,
       reporter: ["json", "json-summary", "text"],
+      reportOnFailure: true,
     },
     env: loadEnv("", process.cwd(), ""),
   },
