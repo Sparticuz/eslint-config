@@ -8,7 +8,7 @@ declare module "@eslint-community/eslint-plugin-eslint-comments/configs" {
 }
 declare module "eslint-plugin-no-unsanitized" {
   const configs: {
-    recommended: FlatConfig.Config;
+    recommended: FlatConfig.Config[];
   };
 }
 declare module "eslint-plugin-promise" {

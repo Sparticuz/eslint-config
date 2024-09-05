@@ -9,7 +9,9 @@ export default tseslint.config(
         projectService: true,
       },
     },
-    rules: {},
+    rules: {
+      "@typescript-eslint/no-deprecated": "warn",
+    },
     settings: {
       node: {
         // Make sure we are looking for Typescript files as well
