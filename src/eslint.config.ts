@@ -4,6 +4,7 @@ import arrayFunctionConfig from "./configs/array-function.js";
 import eslintJSConfig from "./configs/eslint.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import nodeConfig from "./configs/n.js";
+import noUnsanitizedConfig from "./configs/no-unsanitized.js";
 import perfectionistConfig from "./configs/perfectionist.js";
 import prettierConfig from "./configs/prettier.js";
 import promiseConfig from "./configs/promise.js";
@@ -19,9 +20,6 @@ import vitestConfig from "./configs/vitest.js";
  *
  *  eslint-plugin-import will eventually come back...unfortunantly
  *
- * // "eslint-plugin-no-unsanitized": "^4.0.2",
- * // import noUnsanitizedConfig from "./configs/no-unsanitized.js";
- * // ...noUnsanitizedConfig,
  */
 
 export default tseslint.config(
@@ -29,6 +27,7 @@ export default tseslint.config(
   ...eslintCommentsConfig,
   ...nodeConfig,
   ...tseslintConfig,
+  ...noUnsanitizedConfig,
   ...promiseConfig,
   ...unicornConfig,
   ...arrayFunctionConfig,

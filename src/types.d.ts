@@ -6,13 +6,11 @@ declare module "eslint-plugin-array-func" {
 declare module "@eslint-community/eslint-plugin-eslint-comments/configs" {
   const recommended: FlatConfig.Config;
 }
-/*
 declare module "eslint-plugin-no-unsanitized" {
   const configs: {
-    recommended: FlatConfig.Config;
+    recommended: FlatConfig.Config[];
   };
 }
-*/
 declare module "eslint-plugin-promise" {
   const configs: {
     "flat/recommended": FlatConfig.Config;
