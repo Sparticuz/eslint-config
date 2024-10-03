@@ -6,6 +6,13 @@ export default tseslint.config(
   {
     rules: {
       /**
+       * Reset sorting by a new line
+       */
+      "perfectionist/sort-interfaces": [
+        "error",
+        { partitionByNewLine: true, type: "natural" },
+      ],
+      /**
        * Make sure values are first in named imports
        */
       "perfectionist/sort-named-imports": [
@@ -15,16 +22,9 @@ export default tseslint.config(
       /**
        * Reset sorting by a new line
        */
-      "perfectionist/sort-interfaces": [
-        "error",
-        { type: "natural", partitionByNewLine: true },
-      ],
-      /**
-       * Reset sorting by a new line
-       */
       "perfectionist/sort-objects": [
         "error",
-        { type: "natural", partitionByNewLine: true },
+        { partitionByNewLine: true, type: "natural" },
       ],
       /**
        * Make sure nullish values are last

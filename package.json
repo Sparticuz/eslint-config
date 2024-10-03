@@ -17,18 +17,20 @@
     "@eslint-community/eslint-plugin-eslint-comments": "^4.4.0",
     "@eslint/js": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
     "eslint-plugin-array-func": "^5.0.2",
+    "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-n": "^17.10.3",
     "eslint-plugin-no-unsanitized": "^4.1.2",
-    "eslint-plugin-perfectionist": "^3.7.0",
+    "eslint-plugin-perfectionist": "^3.8.0",
     "eslint-plugin-promise": "^7.1.0",
     "eslint-plugin-regexp": "^2.6.0",
     "eslint-plugin-security": "^3.0.1",
     "eslint-plugin-sonarjs": "^2.0.3",
     "eslint-plugin-unicorn": "^55.0.0",
     "eslint-plugin-vitest": "^0.5.4",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.7.0"
+    "globals": "^15.10.0",
+    "typescript-eslint": "^8.8.0"
   },
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
