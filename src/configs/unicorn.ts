@@ -4,6 +4,7 @@ import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 export default tseslint.config(
   unicornPlugin.configs["flat/recommended"] as ConfigWithExtends,
   {
+    name: "@sparticuz/eslint-config/unicorn.ts",
     rules: {
       /**
        * I want to use named imports for path

@@ -16,19 +16,12 @@ import tseslintConfig from "./configs/tseslint.js";
 import unicornConfig from "./configs/unicorn.js";
 import vitestConfig from "./configs/vitest.js";
 
-/**
- *  Plugins to re-implement when they support Flat Config
- *
- *  eslint-plugin-import will eventually come back...unfortunantly
- *
- */
-
 export default tseslint.config(
   ...eslintJSConfig,
-  ...eslintCommentsConfig,
-  ...nodeConfig,
   ...tseslintConfig,
+  ...nodeConfig,
   ...importPlugin,
+  ...eslintCommentsConfig,
   ...noUnsanitizedConfig,
   ...promiseConfig,
   ...unicornConfig,

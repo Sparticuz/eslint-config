@@ -4,12 +4,17 @@ export default tseslint.config(
   ...tseslint.configs.strictTypeChecked,
   ...tseslint.configs.stylisticTypeChecked,
   {
+    name: "@sparticuz/eslint-config/tseslint.ts",
+
     languageOptions: {
       parserOptions: {
         projectService: true,
       },
     },
     rules: {
+      /**
+       * Warn instead of error
+       */
       "@typescript-eslint/no-deprecated": "warn",
     },
     settings: {
@@ -20,8 +25,14 @@ export default tseslint.config(
           ".jsx",
           ".mjs",
           ".cjs",
+          ".mjsx",
+          ".cjsx",
           ".ts",
           ".tsx",
+          ".mts",
+          ".cts",
+          ".mtsx",
+          ".ctsx",
           ".json",
           ".d.ts",
         ],
@@ -31,6 +42,6 @@ export default tseslint.config(
   {
     // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
-    files: ["**/*.js"],
+    files: ["**/*.js", "**/*.jsx"],
   },
 );
