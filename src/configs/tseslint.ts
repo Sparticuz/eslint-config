@@ -16,6 +16,7 @@ export default tseslint.config(
        * Warn instead of error
        */
       "@typescript-eslint/no-deprecated": "warn",
+      "@typescript-eslint/no-unused-vars": "warn",
     },
     settings: {
       node: {
@@ -42,6 +43,6 @@ export default tseslint.config(
   {
     // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
-    files: ["**/*.js", "**/*.jsx"],
+    files: ["**/*.js", "**/*.jsx", ".mjsx", ".cjsx"],
   },
 );

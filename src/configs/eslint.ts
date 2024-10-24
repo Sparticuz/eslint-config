@@ -36,6 +36,9 @@ export default tseslint.config(
        * Disable no-unused-vars because of `@typescript-eslint/no-unused-vars`
        */
       "no-unused-vars": "off",
+      /**
+       * Disable sort-keys because of `perfectionist`
+       */
       "sort-keys": "off",
     },
   },
