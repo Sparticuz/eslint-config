@@ -7,6 +7,9 @@ export default tseslint.config(
   importPlugin.flatConfigs.recommended as ConfigWithExtends,
   {
     name: "@sparticuz/eslint-config/import.ts",
+    rules: {
+      "import/order": "off",
+    },
     settings: {
       "import/resolver": {
         node: true,

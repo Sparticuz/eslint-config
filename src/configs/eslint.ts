@@ -37,7 +37,11 @@ export default tseslint.config(
        */
       "no-unused-vars": "off",
       /**
-       * Disable sort-keys because of `perfectionist`
+       * Disable sort-imports because of `perfectionist/sort-named-imports`
+       */
+      "sort-imports": "off",
+      /**
+       * Disable sort-keys because of `perfectionist/sort-objects`
        */
       "sort-keys": "off",
     },

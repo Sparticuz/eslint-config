@@ -1,8 +1,8 @@
 import tseslint from "typescript-eslint";
 
 import arrayFunctionConfig from "./configs/array-function.js";
-import eslintJSConfig from "./configs/eslint.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
+import eslintJSConfig from "./configs/eslint.js";
 import importPlugin from "./configs/import.js";
 import nodeConfig from "./configs/n.js";
 import noUnsanitizedConfig from "./configs/no-unsanitized.js";

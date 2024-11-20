@@ -21,7 +21,7 @@ export default tseslint.config(
        */
       "perfectionist/sort-named-imports": [
         "error",
-        { groupKind: "values-first" },
+        { groupKind: "values-first", type: "natural" },
       ],
       /**
        * Reset sorting by a new line
@@ -37,6 +37,7 @@ export default tseslint.config(
         "error",
         {
           groups: ["unknown", "nullish"],
+          type: "natural",
         },
       ],
     },

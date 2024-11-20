@@ -13,6 +13,11 @@ export default tseslint.config(
     },
     rules: {
       /**
+       * Disable rule because of perfectionist/sort-interfaces
+       */
+      "@typescript-eslint/adjacent-overload-signatures": "off",
+
+      /**
        * Warn instead of error
        */
       "@typescript-eslint/no-deprecated": "warn",
