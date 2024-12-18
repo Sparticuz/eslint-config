@@ -13,6 +13,14 @@ export default tseslint.config(
        * This rule is dumb
        */
       "sonarjs/no-duplicate-string": "off",
+      /**
+       * Disable in favor of @typescript-eslint/no-unused-vars
+       */
+      "sonarjs/no-unused-vars": "off",
+      /**
+       * TODO's should just be warnings, not errors
+       */
+      "sonarjs/todo-tag": "warn",
     },
   },
 );
