@@ -18,7 +18,7 @@ export default tseslint.config(
        */
       "sonarjs/no-unused-vars": "off",
       /**
-       * TODO's should just be warnings, not errors
+       * TO-DO's should just be warnings, not errors
        */
       "sonarjs/todo-tag": "warn",
     },

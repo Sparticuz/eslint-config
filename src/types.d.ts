@@ -18,7 +18,7 @@ declare module "eslint-plugin-jsx-a11y" {
 }
 declare module "eslint-plugin-no-unsanitized" {
   const configs: {
-    recommended: FlatConfig.Config[];
+    recommended: FlatConfig.Config;
   };
 }
 declare module "eslint-plugin-promise" {
