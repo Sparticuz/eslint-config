@@ -1,6 +1,6 @@
 {
   "name": "@sparticuz/eslint-config",
-  "version": "9.0.12",
+  "version": "9.0.13",
   "description": "Sparticuz's shareable config for eslint",
   "type": "module",
   "exports": {
