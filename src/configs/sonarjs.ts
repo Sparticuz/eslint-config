@@ -10,6 +10,10 @@ export default tseslint.config(
     name: "@sparticuz/eslint-config/sonarjs.ts",
     rules: {
       /**
+       * Disable in favor of @typescript-eslint/no-deprecated
+       */
+      "sonarjs/deprecation": "off",
+      /**
        * This rule is dumb
        */
       "sonarjs/no-duplicate-string": "off",

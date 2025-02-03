@@ -1,28 +1,30 @@
 declare module "eslint-plugin-array-func" {
   const configs: {
-    recommended: FlatConfig.Config;
+    all: Linter.Config;
+    recommended: Linter.Config;
   };
 }
 declare module "@eslint-community/eslint-plugin-eslint-comments/configs" {
-  const recommended: FlatConfig.Config;
+  const recommended: Linter.Config;
 }
 declare module "eslint-plugin-import" {
   const flatConfigs: {
-    recommended: FlatConfig.Config;
-  };
-}
-declare module "eslint-plugin-jsx-a11y" {
-  const flatConfigs: {
-    recommended: FlatConfig.Config;
+    electron: Linter.Config;
+    errors: Linter.Config;
+    react: Linter.Config;
+    "react-native": Linter.Config;
+    recommended: Linter.Config;
+    typescript: Linter.Config;
+    warnings: Linter.Config;
   };
 }
 declare module "eslint-plugin-no-unsanitized" {
   const configs: {
-    recommended: FlatConfig.Config;
+    recommended: Linter.Config;
   };
 }
 declare module "eslint-plugin-promise" {
   const configs: {
-    "flat/recommended": FlatConfig.Config;
+    "flat/recommended": Linter.Config;
   };
 }
