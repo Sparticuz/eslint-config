@@ -1,17 +1,10 @@
 import unicornPlugin from "eslint-plugin-unicorn";
 import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
-import { javascriptFiles, typescriptFiles } from "./file-types.js";
-
 export default tseslint.config(
-  {
-    ...(unicornPlugin.configs.recommended as ConfigWithExtends),
-    files: [...javascriptFiles, ...typescriptFiles],
-  },
+  unicornPlugin.configs.recommended as ConfigWithExtends,
   {
     name: "@sparticuz/eslint-config/unicorn.ts",
-
-    files: [...javascriptFiles, ...typescriptFiles],
     rules: {
       /**
        * I want to use named imports for path

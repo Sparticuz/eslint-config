@@ -2,19 +2,14 @@ import js from "@eslint/js";
 import globals from "globals";
 import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
-import { javascriptFiles, typescriptFiles } from "./file-types.js";
-
 export default tseslint.config(
   {
     name: "@eslint/js/recommended",
-
-    files: [...javascriptFiles, ...typescriptFiles],
     ...js.configs.recommended,
   } as ConfigWithExtends,
   {
     name: "@sparticuz/eslint-config/eslint.ts",
 
-    files: [...javascriptFiles, ...typescriptFiles],
     languageOptions: {
       globals: {
         ...globals.node,

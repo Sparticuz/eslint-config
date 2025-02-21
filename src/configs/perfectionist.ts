@@ -1,19 +1,13 @@
 import perfectionist from "eslint-plugin-perfectionist";
 import tseslint from "typescript-eslint";
 
-import { javascriptFiles, typescriptFiles } from "./file-types.js";
-
 export default tseslint.config(
   {
     name: "perfectionist/recommended-natural",
-
-    files: [...javascriptFiles, ...typescriptFiles],
     ...perfectionist.configs["recommended-natural"],
   },
   {
     name: "@sparticuz/eslint-config/perfectionist.ts",
-
-    files: [...javascriptFiles, ...typescriptFiles],
     rules: {
       /**
        * Reset sorting by a new line
