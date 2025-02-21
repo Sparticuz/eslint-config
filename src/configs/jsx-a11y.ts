@@ -2,8 +2,12 @@ import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import globals from "globals";
 import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
+import { javascriptFiles, typescriptFiles } from "./file-types.js";
+
 export default tseslint.config({
-  files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
+  name: "@sparticuz/eslint-config/jsx-a11y.ts",
+
+  files: [...javascriptFiles, ...typescriptFiles],
   ...jsxA11yPlugin.flatConfigs.recommended,
   languageOptions: {
     ...jsxA11yPlugin.flatConfigs.recommended.languageOptions,

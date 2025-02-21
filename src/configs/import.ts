@@ -1,11 +1,21 @@
 import importPlugin from "eslint-plugin-import";
 import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
+import { javascriptFiles, typescriptFiles } from "./file-types.js";
+
 export default tseslint.config(
-  importPlugin.flatConfigs.recommended as ConfigWithExtends,
-  importPlugin.flatConfigs.typescript as ConfigWithExtends,
+  {
+    ...(importPlugin.flatConfigs.recommended as ConfigWithExtends),
+    files: [...javascriptFiles, ...typescriptFiles],
+  },
+  {
+    ...(importPlugin.flatConfigs.typescript as ConfigWithExtends),
+    files: [...javascriptFiles, ...typescriptFiles],
+  },
   {
     name: "@sparticuz/eslint-config/import.ts",
+
+    files: [...javascriptFiles, ...typescriptFiles],
     rules: {
       /**
        * Turn off all rules based on the advice of @typescript/eslint

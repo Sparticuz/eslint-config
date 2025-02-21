@@ -1,11 +1,20 @@
 import tseslint from "typescript-eslint";
 
+import { javascriptFiles, typescriptFiles } from "./file-types.js";
+
 export default tseslint.config(
-  ...tseslint.configs.strictTypeChecked,
-  ...tseslint.configs.stylisticTypeChecked,
+  {
+    extends: [tseslint.configs.strictTypeChecked],
+    files: [...javascriptFiles, ...typescriptFiles],
+  },
+  {
+    extends: [tseslint.configs.strictTypeChecked],
+    files: [...javascriptFiles, ...typescriptFiles],
+  },
   {
     name: "@sparticuz/eslint-config/tseslint.ts",
 
+    files: [...javascriptFiles, ...typescriptFiles],
     languageOptions: {
       parserOptions: {
         projectService: true,
@@ -48,6 +57,6 @@ export default tseslint.config(
   {
     // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
-    files: ["**/*.js", "**/*.jsx", ".mjsx", ".cjsx"],
+    files: [...javascriptFiles],
   },
 );

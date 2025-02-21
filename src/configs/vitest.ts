@@ -1,9 +1,13 @@
 import vitest from "@vitest/eslint-plugin";
 import tseslint from "typescript-eslint";
 
+import { javascriptFiles, typescriptFiles } from "./file-types.js";
+
 export default tseslint.config(
   {
     name: "vitest/recommended",
+
+    files: [...javascriptFiles, ...typescriptFiles],
     ...vitest.configs.recommended,
   },
   {

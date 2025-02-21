@@ -1,10 +1,13 @@
 import tseslint from "typescript-eslint";
 
 import arrayFunctionConfig from "./configs/array-function.js";
+import cssConfig from "./configs/css.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";
 import importConfig from "./configs/import.js";
+import jsonConfig from "./configs/json.js";
 import jsxA11yConfig from "./configs/jsx-a11y.js";
+import markdownConfig from "./configs/markdown.js";
 import nodeConfig from "./configs/n.js";
 import noUnsanitizedConfig from "./configs/no-unsanitized.js";
 import perfectionistConfig from "./configs/perfectionist.js";
@@ -22,8 +25,10 @@ export default tseslint.config(
   ...tseslintConfig,
   ...nodeConfig,
   ...importConfig,
+  ...jsonConfig,
   ...jsxA11yConfig,
   ...eslintCommentsConfig,
+  ...markdownConfig,
   ...noUnsanitizedConfig,
   ...promiseConfig,
   ...unicornConfig,
@@ -34,4 +39,6 @@ export default tseslint.config(
   ...perfectionistConfig,
   ...prettierConfig,
   ...vitestConfig,
+  // @ts-expect-error This is a type error
+  ...cssConfig,
 );
