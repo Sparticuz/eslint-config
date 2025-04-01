@@ -2,10 +2,7 @@ import vitest from "@vitest/eslint-plugin";
 import tseslint from "typescript-eslint";
 
 export default tseslint.config(
-  {
-    name: "vitest/recommended",
-    ...vitest.configs.recommended,
-  },
+  { ...vitest.configs.recommended },
   {
     name: "@sparticuz/eslint-config/vitest.ts",
 
