@@ -7,6 +7,16 @@ export default tseslint.config(
     name: "@sparticuz/eslint-config/unicorn.ts",
     rules: {
       /**
+       * Use my to-do style comments
+       */
+      "unicorn/expiring-todo-comments": [
+        "warn",
+        {
+          allowWarningComments: false,
+          terms: ["@todo"],
+        },
+      ],
+      /**
        * I want to use named imports for path
        */
       "unicorn/import-style": [

@@ -22,9 +22,9 @@ export default tseslint.config(
        */
       "sonarjs/no-unused-vars": "off",
       /**
-       * TO-DO's should just be warnings, not errors
+       * Use @unicorn/expiring-todo-comments
        */
-      "sonarjs/todo-tag": "warn",
+      "sonarjs/todo-tag": "off",
     },
   },
 );
