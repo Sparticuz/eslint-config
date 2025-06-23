@@ -3,7 +3,7 @@
   "display": "Base Default TSConfig",
   "extends": ["@tsconfig/node22/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
-    "declaration": false,
+    "declaration": true,
     "declarationMap": false,
     "exactOptionalPropertyTypes": false,
     "module": "NodeNext",
