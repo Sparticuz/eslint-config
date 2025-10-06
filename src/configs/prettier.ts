@@ -1,6 +1,9 @@
-import prettierConfig from "eslint-config-prettier/flat";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config({
-  ...prettierConfig,
-} as ConfigWithExtends);
+import prettierConfig from "eslint-config-prettier/flat";
+
+export default [
+  {
+    ...prettierConfig,
+  },
+] satisfies Linter.Config[];

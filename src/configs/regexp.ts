@@ -1,7 +1,10 @@
-import * as regexpPlugin from "eslint-plugin-regexp";
-import tseslint from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config({
-  name: "regexp/flat/recommended",
-  ...regexpPlugin.configs["flat/recommended"],
-});
+import * as regexpPlugin from "eslint-plugin-regexp";
+
+export default [
+  {
+    name: "regexp/flat/recommended",
+    ...regexpPlugin.configs["flat/recommended"],
+  },
+] satisfies Linter.Config[];

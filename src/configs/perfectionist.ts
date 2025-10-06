@@ -1,7 +1,8 @@
-import perfectionist from "eslint-plugin-perfectionist";
-import tseslint from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
+import perfectionist from "eslint-plugin-perfectionist";
+
+export default [
   {
     name: "perfectionist/recommended-natural",
     ...perfectionist.configs["recommended-natural"],
@@ -42,4 +43,4 @@ export default tseslint.config(
       ],
     },
   },
-);
+] satisfies Linter.Config[];

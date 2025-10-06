@@ -1,9 +1,10 @@
-import importPlugin from "eslint-plugin-import";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
-  importPlugin.flatConfigs.recommended as ConfigWithExtends,
-  importPlugin.flatConfigs.typescript as ConfigWithExtends,
+import importPlugin from "eslint-plugin-import";
+
+export default [
+  importPlugin.flatConfigs.recommended,
+  importPlugin.flatConfigs.typescript,
   {
     name: "@sparticuz/eslint-config/import.ts",
     rules: {
@@ -36,4 +37,4 @@ export default tseslint.config(
       },
     },
   },
-);
+] satisfies Linter.Config[];

@@ -1,12 +1,13 @@
+import type { Linter } from "eslint";
+
 import js from "@eslint/js";
 import globals from "globals";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
 
-export default tseslint.config(
+export default [
   {
     name: "@eslint/js/recommended",
     ...js.configs.recommended,
-  } as ConfigWithExtends,
+  },
   {
     name: "@sparticuz/eslint-config/eslint.ts",
 
@@ -46,4 +47,4 @@ export default tseslint.config(
       "sort-keys": "off",
     },
   },
-);
+] satisfies Linter.Config[];

@@ -1,6 +1,7 @@
-import promisePlugin from "eslint-plugin-promise";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
-  promisePlugin.configs["flat/recommended"] as ConfigWithExtends,
-);
+import promisePlugin from "eslint-plugin-promise";
+
+export default [
+  promisePlugin.configs["flat/recommended"],
+] satisfies Linter.Config[];

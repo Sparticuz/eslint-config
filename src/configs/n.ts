@@ -1,8 +1,9 @@
-import nodePlugin from "eslint-plugin-n";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
-  nodePlugin.configs["flat/recommended"] as ConfigWithExtends,
+import nodePlugin from "eslint-plugin-n";
+
+export default [
+  nodePlugin.configs["flat/recommended"],
   {
     name: "@sparticuz/eslint-config/n.ts for testing",
 
@@ -14,4 +15,4 @@ export default tseslint.config(
       "n/no-unpublished-import": "off",
     },
   },
-);
+] satisfies Linter.Config[];

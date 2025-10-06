@@ -1,6 +1,5 @@
-import securityPlugin from "eslint-plugin-security";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
-  securityPlugin.configs.recommended as ConfigWithExtends,
-);
+import securityPlugin from "eslint-plugin-security";
+
+export default [securityPlugin.configs.recommended] satisfies Linter.Config[];

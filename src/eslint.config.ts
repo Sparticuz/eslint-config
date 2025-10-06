@@ -1,5 +1,3 @@
-import tseslint from "typescript-eslint";
-
 import arrayFunctionConfig from "./configs/array-function.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";
@@ -17,7 +15,7 @@ import tseslintConfig from "./configs/tseslint.js";
 import unicornConfig from "./configs/unicorn.js";
 import vitestConfig from "./configs/vitest.js";
 
-export default tseslint.config(
+export default [
   ...eslintJSConfig,
   ...tseslintConfig,
   ...nodeConfig,
@@ -34,4 +32,4 @@ export default tseslint.config(
   ...perfectionistConfig,
   ...prettierConfig,
   ...vitestConfig,
-);
+];

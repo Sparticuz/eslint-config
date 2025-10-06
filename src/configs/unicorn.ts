@@ -1,8 +1,9 @@
-import unicornPlugin from "eslint-plugin-unicorn";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
-  unicornPlugin.configs.recommended as ConfigWithExtends,
+import unicornPlugin from "eslint-plugin-unicorn";
+
+export default [
+  unicornPlugin.configs.recommended,
   {
     name: "@sparticuz/eslint-config/unicorn.ts",
     rules: {
@@ -39,4 +40,4 @@ export default tseslint.config(
       "unicorn/switch-case-braces": "off",
     },
   },
-);
+] satisfies Linter.Config[];

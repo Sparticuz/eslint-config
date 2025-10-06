@@ -1,11 +1,12 @@
-import sonarJSPlugin from "eslint-plugin-sonarjs";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
+import sonarJSPlugin from "eslint-plugin-sonarjs";
+
+export default [
   {
     name: "sonarjs/recommended",
     ...sonarJSPlugin.configs.recommended,
-  } as ConfigWithExtends,
+  },
   {
     name: "@sparticuz/eslint-config/sonarjs.ts",
     rules: {
@@ -27,4 +28,4 @@ export default tseslint.config(
       "sonarjs/todo-tag": "off",
     },
   },
-);
+] satisfies Linter.Config[];

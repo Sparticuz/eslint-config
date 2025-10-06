@@ -1,7 +1,10 @@
-import nounsanitized from "eslint-plugin-no-unsanitized";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config({
-  name: "no-unsanitized/recommended",
-  ...nounsanitized.configs.recommended,
-} as ConfigWithExtends);
+import nounsanitized from "eslint-plugin-no-unsanitized";
+
+export default [
+  {
+    name: "no-unsanitized/recommended",
+    ...nounsanitized.configs.recommended,
+  },
+] satisfies Linter.Config[];

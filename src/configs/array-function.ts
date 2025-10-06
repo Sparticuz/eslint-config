@@ -1,8 +1,9 @@
-import arrayFuncPlugin from "eslint-plugin-array-func";
-import tseslint, { type ConfigWithExtends } from "typescript-eslint";
+import type { Linter } from "eslint";
 
-export default tseslint.config(
-  arrayFuncPlugin.configs.recommended as ConfigWithExtends,
+import arrayFuncPlugin from "eslint-plugin-array-func";
+
+export default [
+  arrayFuncPlugin.configs.recommended,
   {
     name: "@sparticuz/eslint-config/array-function.ts",
     rules: {
@@ -12,4 +13,4 @@ export default tseslint.config(
       "array-func/prefer-array-from": "off",
     },
   },
-);
+] satisfies Linter.Config[];
