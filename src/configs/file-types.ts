@@ -22,3 +22,9 @@ export const typescriptFiles = [
 export const jsonFiles = ["**/*.json"];
 export const markdownFiles = ["**/*.md"];
 export const cssFiles = ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less"];
+export const TEST_FILES = [
+  "**/tests/**",
+  "**/test/**",
+  "vitest.config.ts",
+  "**/*.test.*",
+];

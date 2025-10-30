@@ -40,4 +40,4 @@ export default [
       "unicorn/switch-case-braces": "off",
     },
   },
-] satisfies Linter.Config[];
+] as Linter.Config[];

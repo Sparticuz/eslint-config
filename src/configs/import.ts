@@ -2,7 +2,7 @@ import type { Linter } from "eslint";
 
 import importPlugin from "eslint-plugin-import";
 
-export default [
+const config: Linter.Config[] = [
   importPlugin.flatConfigs.recommended,
   importPlugin.flatConfigs.typescript,
   {
@@ -38,3 +38,5 @@ export default [
     },
   },
 ] satisfies Linter.Config[];
+
+export default config;

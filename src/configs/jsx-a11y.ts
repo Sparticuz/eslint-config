@@ -3,7 +3,7 @@ import type { Linter } from "eslint";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 import globals from "globals";
 
-export default [
+const config: Linter.Config[] = [
   {
     name: "@sparticuz/eslint-config/jsx-a11y.ts",
 
@@ -16,4 +16,6 @@ export default [
       },
     },
   },
-] satisfies Linter.Config[];
+];
+
+export default config;

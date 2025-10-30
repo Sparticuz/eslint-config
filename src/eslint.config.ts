@@ -1,3 +1,5 @@
+import type { Linter } from "eslint";
+
 import arrayFunctionConfig from "./configs/array-function.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";
@@ -32,4 +34,4 @@ export default [
   ...perfectionistConfig,
   ...prettierConfig,
   ...vitestConfig,
-];
+] as Linter.Config[];

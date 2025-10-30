@@ -28,4 +28,4 @@ export default [
       "sonarjs/todo-tag": "off",
     },
   },
-] satisfies Linter.Config[];
+] as Linter.Config[];

@@ -1,33 +1,48 @@
 import vitest from "@vitest/eslint-plugin";
-import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
-export default tseslint.config(vitest.configs.recommended, {
-  name: "@sparticuz/eslint-config/vitest.ts",
+import { TEST_FILES } from "./file-types.js";
 
-  files: ["**/tests/**", "**/test/**", "vitest.config.ts", "**/*.test.*"],
-  languageOptions: {
-    globals: {
-      ...vitest.environments.env.globals,
+export default defineConfig(
+  {
+    files: TEST_FILES,
+    plugins: {
+      // @ts-expect-error This works
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
     },
   },
-  rules: {
-    /**
-     * Vite will already be there because of vitest
-     */
-    "n/no-extraneous-import": [
-      "error",
-      {
-        allowModules: ["vite"],
+
+  {
+    name: "@sparticuz/eslint-config/vitest.ts",
+
+    files: TEST_FILES,
+    languageOptions: {
+      globals: {
+        ...vitest.environments.env.globals,
       },
-    ],
-    /**
-     * Don't require items to be published for tests
-     */
-    "n/no-unpublished-import": "off",
-  },
-  settings: {
-    vitest: {
-      typecheck: true,
+    },
+    rules: {
+      /**
+       * Vite will already be there because of vitest
+       */
+      "n/no-extraneous-import": [
+        "error",
+        {
+          allowModules: ["vite"],
+        },
+      ],
+      /**
+       * Don't require items to be published for tests
+       */
+      "n/no-unpublished-import": "off",
+    },
+    settings: {
+      vitest: {
+        typecheck: true,
+      },
     },
   },
-});
+);

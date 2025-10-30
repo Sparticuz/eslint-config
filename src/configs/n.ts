@@ -15,4 +15,4 @@ export default [
       "n/no-unpublished-import": "off",
     },
   },
-] satisfies Linter.Config[];
+] as Linter.Config[];

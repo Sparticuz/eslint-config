@@ -7,4 +7,4 @@ export default [
     name: "no-unsanitized/recommended",
     ...nounsanitized.configs.recommended,
   },
-] satisfies Linter.Config[];
+] as Linter.Config[];

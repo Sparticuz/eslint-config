@@ -1,8 +1,9 @@
+import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
 import { javascriptFiles } from "./file-types.js";
 
-export default tseslint.config(
+export default defineConfig(
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   {

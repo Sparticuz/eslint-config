@@ -13,4 +13,4 @@ export default [
       "array-func/prefer-array-from": "off",
     },
   },
-] satisfies Linter.Config[];
+] as Linter.Config[];

@@ -17,4 +17,4 @@ export default [
       ],
     },
   },
-] satisfies Linter.Config[];
+] as Linter.Config[];

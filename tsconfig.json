@@ -3,6 +3,7 @@
   "display": "Base Default TSConfig",
   "extends": ["@tsconfig/node22/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
+    "checkJs": true,
     "declaration": true,
     "declarationMap": false,
     "exactOptionalPropertyTypes": false,
@@ -14,6 +15,6 @@
     "sourceMap": true,
     "verbatimModuleSyntax": true
   },
-  "include": ["src", "test", "vitest.config.ts", "src/types.d.ts"],
+  "include": ["src/**/*", "test/**/*", "vitest.config.ts", "src/types.d.ts"],
   "exclude": ["node_modules", "dist"]
 }
