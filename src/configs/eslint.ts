@@ -16,7 +16,7 @@ export default [
         ...globals.node,
       },
       parserOptions: {
-        project: true,
+        projectService: true,
       },
     },
     linterOptions: {

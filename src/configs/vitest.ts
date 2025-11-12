@@ -7,7 +7,6 @@ export default defineConfig(
   {
     files: TEST_FILES,
     plugins: {
-      // @ts-expect-error This works
       vitest,
     },
     rules: {
