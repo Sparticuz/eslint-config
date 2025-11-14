@@ -1,6 +1,6 @@
 {
   "name": "@sparticuz/eslint-config",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "description": "Sparticuz's shareable config for eslint",
   "keywords": [
     "eslint",
