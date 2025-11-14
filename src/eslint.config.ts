@@ -3,7 +3,6 @@ import type { Linter } from "eslint";
 import arrayFunctionConfig from "./configs/array-function.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";
-import importConfig from "./configs/import.js";
 import nodeConfig from "./configs/n.js";
 import noUnsanitizedConfig from "./configs/no-unsanitized.js";
 import perfectionistConfig from "./configs/perfectionist.js";
