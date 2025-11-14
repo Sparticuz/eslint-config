@@ -4,7 +4,6 @@ import arrayFunctionConfig from "./configs/array-function.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";
 import importConfig from "./configs/import.js";
-import jsxA11yConfig from "./configs/jsx-a11y.js";
 import nodeConfig from "./configs/n.js";
 import noUnsanitizedConfig from "./configs/no-unsanitized.js";
 import perfectionistConfig from "./configs/perfectionist.js";
@@ -21,8 +20,6 @@ export default [
   ...eslintJSConfig,
   ...tseslintConfig,
   ...nodeConfig,
-  ...importConfig,
-  ...jsxA11yConfig,
   ...eslintCommentsConfig,
   ...noUnsanitizedConfig,
   ...promiseConfig,

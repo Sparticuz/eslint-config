@@ -20,7 +20,8 @@
   "author": "Kyle McNally <kyle@kmcnally.net>",
   "type": "module",
   "exports": {
-    ".": "./dist/eslint.config.js"
+    ".": "./dist/eslint.config.js",
+    "./import": "./dist/configs/import.js"
   },
   "files": [
     "dist",
@@ -39,7 +40,6 @@
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-array-func": "^5.1.0",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-n": "^17.23.1",
     "eslint-plugin-no-unsanitized": "^4.1.4",
     "eslint-plugin-perfectionist": "^4.15.1",
@@ -52,8 +52,8 @@
     "typescript-eslint": "^8.46.4"
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.2",
-    "@tsconfig/strictest": "^2.0.7",
+    "@tsconfig/node22": "^22.0.3",
+    "@tsconfig/strictest": "^2.0.8",
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-jsx-a11y": "^6.10.1",
     "@types/eslint-plugin-security": "^3.0.0",

@@ -6,7 +6,7 @@ Included in the readme is also Typescript, Prettier, Vitest configs for bootstra
 
 ## Install
 
-`npm install --save-dev @sparticuz/eslint-config typescript-eslint typescript prettier vitest @tsconfig/node20 @tsconfig/strictest`
+`npm install --save-dev @sparticuz/eslint-config typescript-eslint typescript prettier vitest @tsconfig/node22 @tsconfig/strictest`
 
 ## Example package.json
 
@@ -23,13 +23,49 @@ Included in the readme is also Typescript, Prettier, Vitest configs for bootstra
 ```js
 // @ts-check
 import myConfig from "@sparticuz/eslint-config";
-import tseslint from "typescript-eslint";
+import { defineConfig } from "eslint/config";
 
-export default tseslint.config(
+export default defineConfig(
   {
     ignores: ["dist"],
   },
   ...myConfig,
+);
+```
+
+### For Next.js projects
+
+Since Next.js ESLint rules include jsx-a11y and import functionality, you can exclude the import rules and add jsx-a11y back if needed:
+
+```js
+// @ts-check
+import myConfig from "@sparticuz/eslint-config";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  {
+    ignores: ["dist"],
+  },
+  ...myConfig,
+  // Add import config if you want import rules in addition to Next.js built-in ones
+  // ...importConfig,
+);
+```
+
+### For non-Next.js projects that need import rules
+
+```js
+// @ts-check
+import myConfig from "@sparticuz/eslint-config";
+import importConfig from "@sparticuz/eslint-config/import";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  {
+    ignores: ["dist"],
+  },
+  ...myConfig,
+  ...importConfig,
 );
 ```
 
@@ -51,7 +87,7 @@ export default config;
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Base Default TSConfig",
-  "extends": ["@tsconfig/node20/tsconfig", "@tsconfig/strictest/tsconfig"],
+  "extends": ["@tsconfig/node22/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
