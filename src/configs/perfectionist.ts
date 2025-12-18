@@ -22,7 +22,10 @@ export default [
        */
       "perfectionist/sort-named-imports": [
         "error",
-        { groupKind: "values-first", type: "natural" },
+        {
+          groups: ["value-import", "type-import"],
+          type: "natural",
+        },
       ],
       /**
        * Reset sorting by a new line
