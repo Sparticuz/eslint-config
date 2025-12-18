@@ -15,9 +15,6 @@ export default [
       globals: {
         ...globals.node,
       },
-      parserOptions: {
-        projectService: true,
-      },
     },
     linterOptions: {
       reportUnusedDisableDirectives: "warn",

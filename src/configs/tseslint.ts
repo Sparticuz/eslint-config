@@ -9,11 +9,6 @@ export default defineConfig(
   {
     name: "@sparticuz/eslint-config/tseslint.ts",
 
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-      },
-    },
     rules: {
       /**
        * Disable rule because of perfectionist/sort-interfaces
