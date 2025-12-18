@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import { defineConfig } from "eslint/config";
 
 import arrayFunctionConfig from "./configs/array-function.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
@@ -15,7 +15,7 @@ import tseslintConfig from "./configs/tseslint.js";
 import unicornConfig from "./configs/unicorn.js";
 import vitestConfig from "./configs/vitest.js";
 
-export default [
+export default defineConfig(
   ...eslintJSConfig,
   ...tseslintConfig,
   ...nodeConfig,
@@ -30,4 +30,4 @@ export default [
   ...perfectionistConfig,
   ...prettierConfig,
   ...vitestConfig,
-] as Linter.Config[];
+);
