@@ -1,20 +1,34 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Base Default TSConfig",
-  "extends": ["@tsconfig/node22/tsconfig", "@tsconfig/strictest/tsconfig"],
+  "extends": [
+    "@tsconfig/node24/tsconfig.json",
+    "@tsconfig/strictest/tsconfig.json"
+  ],
   "compilerOptions": {
+    "target": "es2024",
+    "moduleDetection": "force",
+
     "checkJs": true,
+    "exactOptionalPropertyTypes": false,
+    "noPropertyAccessFromIndexSignature": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+
     "declaration": true,
     "declarationMap": false,
-    "exactOptionalPropertyTypes": false,
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
-    "noUnusedLocals": false,
-    "outDir": "dist",
-    "resolveJsonModule": true,
     "sourceMap": true,
-    "verbatimModuleSyntax": true
+
+    "outDir": "dist",
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*", "test/**/*", "vitest.config.ts", "src/types.d.ts"],
+  "include": [
+    "**/*.ts",
+    "vitest.config.ts",
+    "eslint.config.js",
+    "prettier.config.js"
+  ],
   "exclude": ["node_modules", "dist"]
 }

@@ -3,7 +3,8 @@
   "compilerOptions": {
     "outDir": "dist",
     "removeComments": true,
-    "sourceMap": false
+    "sourceMap": false,
+    "noEmit": false
   },
-  "exclude": ["test"]
+  "exclude": ["test", "./eslint.config.js", "dist", "./prettier.config.js"]
 }
