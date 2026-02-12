@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sparticuz/eslint-config"
+    "url": "git+https://github.com/Sparticuz/eslint-config.git"
   },
   "license": "ISC",
   "author": "Kyle McNally <kyle@kmcnally.net>",
@@ -47,7 +47,7 @@
     "eslint-plugin-promise": "^7.2.1",
     "eslint-plugin-regexp": "^3.0.0",
     "eslint-plugin-security": "^3.0.1",
-    "eslint-plugin-sonarjs": "^3.0.6",
+    "eslint-plugin-sonarjs": "^3.0.7",
     "eslint-plugin-unicorn": "^63.0.0",
     "globals": "^17.3.0",
     "typescript-eslint": "^8.55.0"
