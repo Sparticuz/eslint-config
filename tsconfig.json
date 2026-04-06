@@ -28,7 +28,8 @@
     "**/*.ts",
     "vitest.config.ts",
     "eslint.config.js",
-    "prettier.config.js"
+    "prettier.config.js",
+    "tsconfig.json"
   ],
   "exclude": ["node_modules", "dist"]
 }

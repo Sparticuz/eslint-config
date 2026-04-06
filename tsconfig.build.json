@@ -2,9 +2,16 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
+    "rootDir": "src",
     "removeComments": true,
     "sourceMap": false,
     "noEmit": false
   },
-  "exclude": ["test", "./eslint.config.js", "dist", "./prettier.config.js"]
+  "exclude": [
+    "test",
+    "./eslint.config.js",
+    "dist",
+    "./prettier.config.js",
+    "./tsconfig.json"
+  ]
 }
