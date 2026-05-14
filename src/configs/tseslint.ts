@@ -50,7 +50,7 @@ export default defineConfig(
   },
   {
     // Disable typechecking for Javascript files
-    extends: [tseslint.configs.disableTypeChecked],
+    ...tseslint.configs.disableTypeChecked,
     files: JAVASCRIPT_FILES,
   },
 );
