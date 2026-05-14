@@ -1,4 +1,4 @@
-export const javascriptFiles = [
+export const JAVASCRIPT_FILES = [
   "**/*.js",
   "**/*.jsx",
   "**/*.cjs",
@@ -8,7 +8,7 @@ export const javascriptFiles = [
   "eslint.config.js",
   "vitest.config.js",
 ];
-export const typescriptFiles = [
+export const TYPESCRIPT_FILES = [
   "**/*.ts",
   "**/*.tsx",
   "**/*.cts",
@@ -24,4 +24,22 @@ export const TEST_FILES = [
   "**/test/**",
   "vitest.config.ts",
   "**/*.test.*",
+];
+export const JSON_FILES = ["**/*.json", "**/*.jsonc"];
+export const NEXT_JS_FILES = [
+  "**/page.tsx",
+  "**/layout.tsx",
+  "**/loading.tsx",
+  "**/error.tsx",
+  "**/not-found.tsx",
+  "**/route.ts",
+  "**/default.tsx",
+  "**/template.tsx",
+  "**/opengraph-image.tsx",
+  "**/icon.tsx",
+  "**/apple-icon.tsx",
+  "**/manifest.ts",
+  "**/sitemap.ts",
+  "**/robots.ts",
+  "**/middleware.ts",
 ];

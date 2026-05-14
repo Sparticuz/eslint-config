@@ -2,28 +2,11 @@ import nextPlugin from "@next/eslint-plugin-next";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
 
+import { NEXT_JS_FILES } from "./configs/file-types.js";
 import importConfig from "./configs/import.js";
 import jsxA11yConfig from "./configs/jsxa11y.js";
 import reactKitConfig from "./configs/react-kit.js";
 import reactConfigs from "./configs/react.js";
-
-const NEXT_JS_FILES = [
-  "**/page.tsx",
-  "**/layout.tsx",
-  "**/loading.tsx",
-  "**/error.tsx",
-  "**/not-found.tsx",
-  "**/route.ts",
-  "**/default.tsx",
-  "**/template.tsx",
-  "**/opengraph-image.tsx",
-  "**/icon.tsx",
-  "**/apple-icon.tsx",
-  "**/manifest.ts",
-  "**/sitemap.ts",
-  "**/robots.ts",
-  "**/middleware.ts",
-];
 
 export default defineConfig(
   ...reactConfigs,

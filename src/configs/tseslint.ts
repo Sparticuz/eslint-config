@@ -1,7 +1,7 @@
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-import { javascriptFiles } from "./file-types.js";
+import { JAVASCRIPT_FILES } from "./file-types.js";
 
 export default defineConfig(
   tseslint.configs.strictTypeChecked,
@@ -51,6 +51,6 @@ export default defineConfig(
   {
     // Disable typechecking for Javascript files
     extends: [tseslint.configs.disableTypeChecked],
-    files: javascriptFiles,
+    files: JAVASCRIPT_FILES,
   },
 );
