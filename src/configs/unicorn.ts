@@ -6,6 +6,7 @@ export default [
   unicornPlugin.configs.recommended,
   {
     name: "@sparticuz/eslint-config/unicorn.ts",
+    plugins: unicornPlugin.configs.recommended.plugins,
     rules: {
       /**
        * Use my to-do style comments

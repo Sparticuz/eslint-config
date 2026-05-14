@@ -14,6 +14,7 @@ export default [
       "eslint.config.ts",
       "vitest.config.ts",
     ],
+    plugins: nodePlugin.configs["flat/recommended"].plugins,
     rules: {
       /**
        * Don't require items to be published for tests and config files

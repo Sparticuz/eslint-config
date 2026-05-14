@@ -1,4 +1,5 @@
 import vitest from "@vitest/eslint-plugin";
+import nodePlugin from "eslint-plugin-n";
 import { defineConfig } from "eslint/config";
 
 import { TEST_FILES } from "./file-types.js";
@@ -23,6 +24,7 @@ export default defineConfig(
         ...vitest.environments.env.globals,
       },
     },
+    plugins: nodePlugin.configs["flat/recommended"].plugins,
     rules: {
       /**
        * Vite will already be there because of vitest

@@ -6,6 +6,7 @@ export default [
   arrayFuncPlugin.configs.recommended,
   {
     name: "@sparticuz/eslint-config/array-function.ts",
+    plugins: arrayFuncPlugin.configs.recommended.plugins,
     rules: {
       /**
        * Array Func prefers array.from, however, Unicorn prefers spread. Spread is better

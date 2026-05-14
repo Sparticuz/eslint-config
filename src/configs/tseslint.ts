@@ -14,6 +14,9 @@ export default defineConfig(
         projectService: true,
       },
     },
+    plugins: {
+      "@typescript-eslint": tseslint.plugin,
+    },
     rules: {
       /**
        * Disable rule because of perfectionist/sort-interfaces

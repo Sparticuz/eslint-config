@@ -6,6 +6,7 @@ export default [
   comments.recommended,
   {
     name: "@sparticuz/eslint-config/eslint-comments.ts",
+    plugins: comments.recommended.plugins,
     rules: {
       /**
        * The allowWholeFile option lets you allow disabling rules for the entire file while

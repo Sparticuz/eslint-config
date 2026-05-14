@@ -1,6 +1,7 @@
 import nextPlugin from "@next/eslint-plugin-next";
 import { defineConfig } from "eslint/config";
 import globals from "globals";
+import tseslint from "typescript-eslint";
 
 import { NEXT_JS_FILES } from "./configs/file-types.js";
 import importConfig from "./configs/import.js";
@@ -47,6 +48,7 @@ export default defineConfig(
     name: "@sparticuz/eslint-config/react",
     plugins: {
       "@eslint-react/kit": kitPlugin,
+      "@typescript-eslint": tseslint.plugin,
     },
     rules: {
       /**

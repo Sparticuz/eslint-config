@@ -9,6 +9,7 @@ export default [
   },
   {
     name: "@sparticuz/eslint-config/sonarjs.ts",
+    plugins: sonarJSPlugin.configs.recommended.plugins,
     rules: {
       /**
        * Disable in favor of @typescript-eslint/no-deprecated

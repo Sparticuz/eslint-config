@@ -9,6 +9,7 @@ export default [
   },
   {
     name: "@sparticuz/eslint-config/perfectionist.ts",
+    plugins: perfectionist.configs["recommended-natural"].plugins,
     rules: {
       /**
        * Reset sorting by a new line

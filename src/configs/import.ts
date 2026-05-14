@@ -13,6 +13,7 @@ const config: Linter.Config[] = [
       sourceType: "module",
     },
     name: "@sparticuz/eslint-config/import.ts",
+    plugins: importX.flatConfigs.recommended.plugins,
     rules: {
       /**
        * Turn off all rules based on the advice of @typescript/eslint
