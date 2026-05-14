@@ -8,6 +8,12 @@ import jsxA11yConfig from "./configs/jsxa11y.js";
 import reactKitConfig from "./configs/react-kit.js";
 import reactConfigs from "./configs/react.js";
 
+// Extract the kit plugin instance so we can register it in config objects
+// that reference @eslint-react/kit/* rules. Plugin must be co-located with
+// its rules — never rely on registration from a sibling config object.
+const kitPlugin = reactKitConfig[0]?.plugins?.["@eslint-react/kit"];
+if (!kitPlugin) throw new Error("@eslint-react/kit plugin not found in reactKitConfig");
+
 export default defineConfig(
   ...reactConfigs,
   ...jsxA11yConfig,
@@ -39,6 +45,9 @@ export default defineConfig(
   // Custom rule overrides
   {
     name: "@sparticuz/eslint-config/react",
+    plugins: {
+      "@eslint-react/kit": kitPlugin,
+    },
     rules: {
       /**
        * Downgrade function-component-definition from error to warn
@@ -74,6 +83,9 @@ export default defineConfig(
   {
     files: NEXT_JS_FILES,
     name: "@sparticuz/eslint-config/react/nextjs-overrides",
+    plugins: {
+      "@eslint-react/kit": kitPlugin,
+    },
     rules: {
       "@eslint-react/kit/function-component-definition": "off",
       "import-x/no-default-export": "off",
