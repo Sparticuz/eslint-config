@@ -2,7 +2,9 @@ import tailwindPlugin from "eslint-plugin-better-tailwindcss";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig({
-  extends: [tailwindPlugin.configs.recommended],
+  ...tailwindPlugin.configs.stylistic,
+  ...tailwindPlugin.configs.correctness,
+  ...tailwindPlugin.configs.recommended,
   files: ["**/*.{jsx,tsx}"],
   languageOptions: {
     parserOptions: {

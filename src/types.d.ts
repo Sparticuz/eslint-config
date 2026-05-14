@@ -24,8 +24,3 @@ declare module "eslint-plugin-package-json" {
     stylistic: Linter.Config;
   };
 }
-declare module "eslint-plugin-better-tailwindcss" {
-  const configs: {
-    recommended: Linter.Config;
-  };
-}
