@@ -1,26 +1,23 @@
 declare module "eslint-plugin-array-func" {
-  const configs: {
-    all: Linter.Config;
-    recommended: Linter.Config;
+  const plugin: {
+    configs: {
+      all: import("eslint").Linter.Config;
+      recommended: import("eslint").Linter.Config;
+    };
   };
+  export = plugin;
 }
+
 declare module "@eslint-community/eslint-plugin-eslint-comments/configs" {
-  const recommended: Linter.Config;
+  const recommended: import("eslint").Linter.Config;
 }
 declare module "eslint-plugin-no-unsanitized" {
   const configs: {
-    recommended: Linter.Config;
+    recommended: import("eslint").Linter.Config;
   };
 }
 declare module "eslint-plugin-promise" {
   const configs: {
-    "flat/recommended": Linter.Config;
-  };
-}
-declare module "eslint-plugin-package-json" {
-  const configs: {
-    recommended: Linter.Config;
-    "recommended-publishable": Linter.Config;
-    stylistic: Linter.Config;
+    "flat/recommended": import("eslint").Linter.Config;
   };
 }
