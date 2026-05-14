@@ -19,9 +19,6 @@ export const typescriptFiles = [
   "eslint.config.ts",
   "vitest.config.ts",
 ];
-export const jsonFiles = ["**/*.json"];
-export const markdownFiles = ["**/*.md"];
-export const cssFiles = ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less"];
 export const TEST_FILES = [
   "**/tests/**",
   "**/test/**",

@@ -15,6 +15,11 @@ export default [
         "error",
         { allowWholeFile: true },
       ],
+      /**
+       * Require a description when disabling rules. This helps developers understand why a
+       * rule was disabled and can prevent confusion or misuse of eslint-disable directives.
+       */
+      "@eslint-community/eslint-comments/require-description": ["error"],
     },
   },
 ] as Linter.Config[];

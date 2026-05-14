@@ -17,3 +17,15 @@ declare module "eslint-plugin-promise" {
     "flat/recommended": Linter.Config;
   };
 }
+declare module "eslint-plugin-package-json" {
+  const configs: {
+    recommended: Linter.Config;
+    "recommended-publishable": Linter.Config;
+    stylistic: Linter.Config;
+  };
+}
+declare module "eslint-plugin-better-tailwindcss" {
+  const configs: {
+    recommended: Linter.Config;
+  };
+}

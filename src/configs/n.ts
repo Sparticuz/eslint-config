@@ -5,12 +5,18 @@ import nodePlugin from "eslint-plugin-n";
 export default [
   nodePlugin.configs["flat/recommended"],
   {
-    name: "@sparticuz/eslint-config/n.ts for testing",
+    name: "@sparticuz/eslint-config/n.ts/config-overrides",
 
-    files: ["tests/**", "test/**", "eslint.config.js", "vitest.config.ts"],
+    files: [
+      "tests/**",
+      "test/**",
+      "eslint.config.js",
+      "eslint.config.ts",
+      "vitest.config.ts",
+    ],
     rules: {
       /**
-       * Don't require items to be published for tests
+       * Don't require items to be published for tests and config files
        */
       "n/no-unpublished-import": "off",
     },

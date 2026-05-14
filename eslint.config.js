@@ -1,17 +1,16 @@
 import { defineConfig, globalIgnores } from "eslint/config";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-import myConfig from "./dist/eslint.config.js";
+import myConfig from "./dist/base.js";
 
-export default defineConfig(
-  ...myConfig,
-  {
-    languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: import.meta.dirname,
-      },
+const tsconfigRootDirectory = dirname(fileURLToPath(import.meta.url));
+
+export default defineConfig(globalIgnores(["dist"]), ...myConfig, {
+  languageOptions: {
+    parserOptions: {
+      tsconfigRootDir: tsconfigRootDirectory,
     },
-    name: "local-config",
   },
-  globalIgnores(["dist"]),
-);
+  name: "local-config",
+});

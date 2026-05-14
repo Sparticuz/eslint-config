@@ -6,14 +6,29 @@ Included in the readme is also Typescript, Prettier, Vitest configs for bootstra
 
 ## Install
 
-`npm install --save-dev @sparticuz/eslint-config typescript-eslint typescript prettier vitest @tsconfig/node22 @tsconfig/strictest`
+```sh
+npm install --save-dev @sparticuz/eslint-config typescript-eslint typescript prettier vitest @tsconfig/node24 @tsconfig/strictest
+```
+
+## Available Exports
+
+| Export                                  | Description                                                                   |
+| --------------------------------------- | ----------------------------------------------------------------------------- |
+| `@sparticuz/eslint-config`              | Base config: ESLint, TypeScript, Node, Unicorn, Perfectionist, Prettier, etc. |
+| `@sparticuz/eslint-config/import`       | Import rules (standalone for non-React projects)                              |
+| `@sparticuz/eslint-config/react`        | React + Next.js + JSX a11y + React Hooks + import rules                       |
+| `@sparticuz/eslint-config/tailwind`     | Tailwind CSS linting via eslint-plugin-better-tailwindcss                     |
+| `@sparticuz/eslint-config/json`         | JSON/JSONC linting via @eslint/json                                           |
+| `@sparticuz/eslint-config/markdown`     | Markdown linting via @eslint/markdown                                         |
+| `@sparticuz/eslint-config/css`          | CSS linting via @eslint/css                                                   |
+| `@sparticuz/eslint-config/package-json` | package.json linting via eslint-plugin-package-json                           |
 
 ## Example package.json
 
 ```json
 "scripts": {
   "build": "rm -rf dist/** && tsc -p tsconfig.build.json",
-  "lint": "eslint \"**/*.?(c|m)[jt]s?(x)\"",
+  "lint": "eslint",
   "test": "vitest run --coverage"
 },
 ```
@@ -33,26 +48,52 @@ export default defineConfig(
 );
 ```
 
-### For Next.js projects
+### For Next.js / React projects
 
-Since Next.js ESLint rules include jsx-a11y and import functionality, you can exclude the import rules and add jsx-a11y back if needed:
+The `/react` export includes React, React Hooks, JSX accessibility, Next.js, and import rules — all in one:
 
 ```js
 // @ts-check
 import myConfig from "@sparticuz/eslint-config";
+import reactConfig from "@sparticuz/eslint-config/react";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
   {
-    ignores: ["dist"],
+    ignores: ["dist", ".next"],
   },
   ...myConfig,
-  // Add import config if you want import rules in addition to Next.js built-in ones
-  // ...importConfig,
+  ...reactConfig,
 );
 ```
 
-### For non-Next.js projects that need import rules
+The React config automatically:
+
+- Enables `import/no-default-export` as a warning
+- Relaxes it for Next.js convention files (`page.tsx`, `layout.tsx`, `route.ts`, etc.) and config/story files
+- Sets `react/function-component-definition` to prefer arrow functions (function declarations for Next.js files)
+- Configures `@typescript-eslint/no-misused-promises` for JSX attributes
+
+### With Tailwind CSS
+
+```js
+// @ts-check
+import myConfig from "@sparticuz/eslint-config";
+import reactConfig from "@sparticuz/eslint-config/react";
+import tailwindConfig from "@sparticuz/eslint-config/tailwind";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  {
+    ignores: ["dist", ".next"],
+  },
+  ...myConfig,
+  ...reactConfig,
+  ...tailwindConfig,
+);
+```
+
+### For non-React projects that need import rules
 
 ```js
 // @ts-check
@@ -66,6 +107,29 @@ export default defineConfig(
   },
   ...myConfig,
   ...importConfig,
+);
+```
+
+### With JSON, Markdown, CSS, and package.json linting
+
+```js
+// @ts-check
+import myConfig from "@sparticuz/eslint-config";
+import cssConfig from "@sparticuz/eslint-config/css";
+import jsonConfig from "@sparticuz/eslint-config/json";
+import markdownConfig from "@sparticuz/eslint-config/markdown";
+import packageJsonConfig from "@sparticuz/eslint-config/package-json";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  {
+    ignores: ["dist"],
+  },
+  ...myConfig,
+  ...jsonConfig,
+  ...markdownConfig,
+  ...cssConfig,
+  ...packageJsonConfig,
 );
 ```
 
@@ -87,7 +151,7 @@ export default config;
 {
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Base Default TSConfig",
-  "extends": ["@tsconfig/node22/tsconfig", "@tsconfig/strictest/tsconfig"],
+  "extends": ["@tsconfig/node24/tsconfig", "@tsconfig/strictest/tsconfig"],
   "compilerOptions": {
     "declaration": true,
     "declarationMap": true,
