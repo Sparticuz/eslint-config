@@ -38,6 +38,7 @@ export class ConfigArray {
     const merged: NonNullable<Linter.Config["plugins"]> = {};
     for (const config of this.#configs) {
       if (config.plugins) {
+        // Last registration wins for duplicate keys — consistent with ESLint's own config merge semantics.
         Object.assign(merged, config.plugins);
       }
     }
@@ -59,10 +60,12 @@ export class ConfigArray {
   ): ConfigArray {
     const plugins = this.#mergedPlugins();
     const overrideList = Array.isArray(overrides) ? overrides : [overrides];
-    const merged = overrideList.map((override) => ({
-      plugins,
-      ...override,
-    }));
+    const merged = overrideList.map((override) => {
+      const mergedPlugins = { ...plugins, ...override.plugins };
+      return Object.keys(mergedPlugins).length > 0
+        ? { ...override, plugins: mergedPlugins }
+        : { ...override };
+    });
     return new ConfigArray([...this.#configs, ...merged]);
   }
 
