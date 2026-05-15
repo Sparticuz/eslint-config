@@ -33,16 +33,14 @@ export class ConfigArray {
     this.#configs = configs;
   }
 
-  /** Merge all plugins from the wrapped config array into a single map. */
-  #mergedPlugins(): NonNullable<Linter.Config["plugins"]> {
-    const merged: NonNullable<Linter.Config["plugins"]> = {};
-    for (const config of this.#configs) {
-      if (config.plugins) {
-        // Last registration wins for duplicate keys — consistent with ESLint's own config merge semantics.
-        Object.assign(merged, config.plugins);
-      }
-    }
-    return merged;
+  /** Spread support: `...myConfig` still works. */
+  [Symbol.iterator](): Iterator<Linter.Config> {
+    return this.#configs[Symbol.iterator]();
+  }
+
+  /** Return the underlying array. */
+  toArray(): Linter.Config[] {
+    return [...this.#configs];
   }
 
   /**
@@ -69,13 +67,15 @@ export class ConfigArray {
     return new ConfigArray([...this.#configs, ...merged]);
   }
 
-  /** Return the underlying array. */
-  toArray(): Linter.Config[] {
-    return [...this.#configs];
-  }
-
-  /** Spread support: `...myConfig` still works. */
-  [Symbol.iterator](): Iterator<Linter.Config> {
-    return this.#configs[Symbol.iterator]();
+  /** Merge all plugins from the wrapped config array into a single map. */
+  #mergedPlugins(): NonNullable<Linter.Config["plugins"]> {
+    const merged: NonNullable<Linter.Config["plugins"]> = {};
+    for (const config of this.#configs) {
+      if (config.plugins) {
+        // Last registration wins for duplicate keys — consistent with ESLint's own config merge semantics.
+        Object.assign(merged, config.plugins);
+      }
+    }
+    return merged;
   }
 }
