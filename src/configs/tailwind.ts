@@ -19,10 +19,16 @@ export default new ConfigArray(
     },
     rules: {
       ...tailwindPlugin.configs.recommended.rules,
+      /**
+       * Prefer single-line Tailwind classes
+       */
       "better-tailwindcss/enforce-consistent-line-wrapping": [
         "warn",
         { preferSingleLine: true },
       ],
+      /**
+       * Warn on unknown Tailwind classes (override recommended's "error")
+       */
       "better-tailwindcss/no-unknown-classes": "warn",
     },
   }),
