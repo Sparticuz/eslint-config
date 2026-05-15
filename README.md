@@ -23,6 +23,59 @@ npm install --save-dev @sparticuz/eslint-config typescript-eslint typescript pre
 | `@sparticuz/eslint-config/css`          | CSS linting via @eslint/css                                                   |
 | `@sparticuz/eslint-config/package-json` | package.json linting via eslint-plugin-package-json                           |
 
+## Overriding Rules
+
+Because ESLint v10 requires a plugin to be registered in the same config object that references its rules, you cannot override plugin rules by appending a plain config object after spreading this package's exports.
+
+All exports expose a `with()` method that handles this for you. It appends a new config object with all plugins already merged in, so you never need to install or import plugins that are already bundled here.
+
+```js
+// @ts-check
+import myConfig from "@sparticuz/eslint-config";
+import { defineConfig } from "eslint/config";
+
+export default defineConfig(
+  { ignores: ["dist"] },
+  ...myConfig.with({
+    rules: {
+      // Override rules from any bundled plugin — no extra imports needed
+      "unicorn/no-null": "error",
+      "@typescript-eslint/no-unused-vars": "error",
+    },
+  }),
+);
+```
+
+You can also scope overrides to specific files:
+
+```js
+...myConfig.with({
+  files: ["src/db/**/*.ts"],
+  rules: {
+    "unicorn/no-null": "off",
+  },
+}),
+```
+
+Pass an array to `with()` to append multiple override objects at once:
+
+```js
+...myConfig.with([
+  { rules: { "unicorn/no-null": "error" } },
+  { files: ["**/*.test.ts"], rules: { "unicorn/no-null": "off" } },
+]),
+```
+
+`with()` returns a new `ConfigArray`, so calls can be chained:
+
+```js
+...myConfig
+  .with({ rules: { "unicorn/no-null": "error" } })
+  .with({ files: ["src/db/**"], rules: { "unicorn/no-null": "off" } }),
+```
+
+Existing `...spread` usage continues to work unchanged for consumers who don't need overrides.
+
 ## Example package.json
 
 ```json
