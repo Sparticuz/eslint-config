@@ -1,7 +1,5 @@
-import type { Linter } from "eslint";
-
 import markdown from "@eslint/markdown";
 
-const config: Linter.Config[] = [...markdown.configs.recommended];
+import { ConfigArray } from "../config-array.js";
 
-export default config;
+export default new ConfigArray([...markdown.configs.recommended]);

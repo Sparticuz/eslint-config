@@ -1,8 +1,8 @@
-import type { Linter } from "eslint";
-
 import json from "@eslint/json";
 
-const config: Linter.Config[] = [
+import { ConfigArray } from "../config-array.js";
+
+export default new ConfigArray([
   {
     ...json.configs.recommended,
     files: ["**/*.json"],
@@ -21,6 +21,4 @@ const config: Linter.Config[] = [
     language: "json/jsonc",
     name: "@sparticuz/eslint-config/jsonc",
   },
-];
-
-export default config;
+]);

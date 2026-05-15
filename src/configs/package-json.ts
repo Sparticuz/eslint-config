@@ -1,11 +1,11 @@
-import type { Linter } from "eslint";
-
 import packageJson from "eslint-plugin-package-json";
 import { defineConfig } from "eslint/config";
 
-const config: Linter.Config[] = defineConfig([
-  packageJson.configs.recommended,
-  packageJson.configs.stylistic,
-]);
+import { ConfigArray } from "../config-array.js";
 
-export default config;
+export default new ConfigArray(
+  defineConfig([
+    packageJson.configs.recommended,
+    packageJson.configs.stylistic,
+  ]),
+);
