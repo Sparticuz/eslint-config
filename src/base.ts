@@ -1,5 +1,6 @@
 import { defineConfig } from "eslint/config";
 
+import { ConfigArray } from "./config-array.js";
 import arrayFunctionConfig from "./configs/array-function.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";
@@ -22,21 +23,23 @@ import vitestConfig from "./configs/vitest.js";
 
 const JS_TS_FILES = [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES];
 
-export default defineConfig(
-  ...withFiles(JS_TS_FILES, [
-    ...eslintJSConfig,
-    ...tseslintConfig,
-    ...nodeConfig,
-    ...eslintCommentsConfig,
-    ...noUnsanitizedConfig,
-    ...promiseConfig,
-    ...unicornConfig,
-    ...arrayFunctionConfig,
-    ...regexpConfig,
-    ...sonarJsConfig,
-    ...securityConfig,
-    ...perfectionistConfig,
-    ...prettierConfig,
-    ...vitestConfig,
-  ]),
+export default new ConfigArray(
+  defineConfig(
+    ...withFiles(JS_TS_FILES, [
+      ...eslintJSConfig,
+      ...tseslintConfig,
+      ...nodeConfig,
+      ...eslintCommentsConfig,
+      ...noUnsanitizedConfig,
+      ...promiseConfig,
+      ...unicornConfig,
+      ...arrayFunctionConfig,
+      ...regexpConfig,
+      ...sonarJsConfig,
+      ...securityConfig,
+      ...perfectionistConfig,
+      ...prettierConfig,
+      ...vitestConfig,
+    ]),
+  ),
 );
