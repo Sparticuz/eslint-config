@@ -1,5 +1,3 @@
-import type { Linter } from "eslint";
-
 export const JAVASCRIPT_FILES = [
   "**/*.js",
   "**/*.jsx",
@@ -46,14 +44,3 @@ export const NEXT_JS_FILES = [
   "**/middleware.ts",
 ];
 
-/**
- * Adds a `files` glob to every config object in an array.
- * Use this instead of `extends` + `files` to scope a set of configs
- * to specific file patterns without relying on the `extends` key.
- */
-export function withFiles(
-  files: string[],
-  configs: Linter.Config[],
-): Linter.Config[] {
-  return configs.map((config) => ({ ...config, files }));
-}
