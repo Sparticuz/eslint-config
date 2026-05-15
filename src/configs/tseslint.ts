@@ -24,6 +24,11 @@ export default defineConfig(
       "@typescript-eslint/adjacent-overload-signatures": "off",
 
       /**
+       * https://www.totaltypescript.com/method-shorthand-syntax-considered-harmful
+       */
+      "@typescript-eslint/method-signature-style": ["error", "property"],
+
+      /**
        * Warn instead of error
        */
       "@typescript-eslint/no-deprecated": "warn",
