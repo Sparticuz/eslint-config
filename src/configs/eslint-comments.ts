@@ -2,9 +2,12 @@ import type { Linter } from "eslint";
 
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+
 export default [
-  comments.recommended,
+  { ...comments.recommended, files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES] },
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/eslint-comments.ts",
     plugins: comments.recommended.plugins,
     rules: {

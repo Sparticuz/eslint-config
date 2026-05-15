@@ -3,12 +3,16 @@ import type { Linter } from "eslint";
 import js from "@eslint/js";
 import globals from "globals";
 
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+
 export default [
   {
-    name: "@eslint/js/recommended",
     ...js.configs.recommended,
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+    name: "@eslint/js/recommended",
   },
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/eslint.ts",
 
     languageOptions: {

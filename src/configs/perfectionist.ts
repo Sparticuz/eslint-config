@@ -2,12 +2,16 @@ import type { Linter } from "eslint";
 
 import perfectionist from "eslint-plugin-perfectionist";
 
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+
 export default [
   {
-    name: "perfectionist/recommended-natural",
     ...perfectionist.configs["recommended-natural"],
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+    name: "perfectionist/recommended-natural",
   },
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/perfectionist.ts",
     plugins: perfectionist.configs["recommended-natural"].plugins,
     rules: {

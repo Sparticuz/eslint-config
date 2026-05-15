@@ -2,6 +2,7 @@ import type { Linter } from "eslint";
 
 import eslintReact from "@eslint-react/eslint-plugin";
 import reactHooks from "eslint-plugin-react-hooks";
+
 import eslintKit from "./react-kit.js";
 
 export default [

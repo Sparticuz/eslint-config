@@ -1,12 +1,19 @@
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-import { JAVASCRIPT_FILES } from "./file-types.js";
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
 
 export default defineConfig(
-  tseslint.configs.strictTypeChecked,
-  tseslint.configs.stylisticTypeChecked,
+  tseslint.configs.strictTypeChecked.map((c) => ({
+    ...c,
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+  })),
+  tseslint.configs.stylisticTypeChecked.map((c) => ({
+    ...c,
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+  })),
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/tseslint.ts",
 
     languageOptions: {

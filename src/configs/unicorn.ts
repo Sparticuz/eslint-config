@@ -2,9 +2,12 @@ import type { Linter } from "eslint";
 
 import unicornPlugin from "eslint-plugin-unicorn";
 
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+
 export default [
-  unicornPlugin.configs.recommended,
+  { ...unicornPlugin.configs.recommended, files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES] },
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/unicorn.ts",
     plugins: unicornPlugin.configs.recommended.plugins,
     rules: {

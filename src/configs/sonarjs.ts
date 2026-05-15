@@ -2,12 +2,16 @@ import type { Linter } from "eslint";
 
 import sonarJSPlugin from "eslint-plugin-sonarjs";
 
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+
 export default [
   {
-    name: "sonarjs/recommended",
     ...sonarJSPlugin.configs.recommended,
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+    name: "sonarjs/recommended",
   },
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/sonarjs.ts",
     plugins: sonarJSPlugin.configs.recommended.plugins,
     rules: {
