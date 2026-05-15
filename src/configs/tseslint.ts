@@ -1,15 +1,15 @@
 import { defineConfig } from "eslint/config";
 import tseslint from "typescript-eslint";
 
-import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default defineConfig(
-  tseslint.configs.strictTypeChecked.map((c) => ({
-    ...c,
+  tseslint.configs.strictTypeChecked.map((config) => ({
+    ...config,
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   })),
-  tseslint.configs.stylisticTypeChecked.map((c) => ({
-    ...c,
+  tseslint.configs.stylisticTypeChecked.map((config) => ({
+    ...config,
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   })),
   {

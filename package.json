@@ -26,6 +26,7 @@
     "./json": "./dist/configs/json.js",
     "./markdown": "./dist/configs/markdown.js",
     "./package-json": "./dist/configs/package-json.js",
+    "./prettier": "./dist/configs/prettier.js",
     "./react": "./dist/react.js",
     "./tailwind": "./dist/configs/tailwind.js"
   },

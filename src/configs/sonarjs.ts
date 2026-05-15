@@ -2,7 +2,7 @@ import type { Linter } from "eslint";
 
 import sonarJSPlugin from "eslint-plugin-sonarjs";
 
-import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default [
   {

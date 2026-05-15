@@ -3,7 +3,7 @@ import type { Linter } from "eslint";
 import js from "@eslint/js";
 import globals from "globals";
 
-import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default [
   {

@@ -2,19 +2,13 @@ import vitest from "@vitest/eslint-plugin";
 import nodePlugin from "eslint-plugin-n";
 import { defineConfig } from "eslint/config";
 
-import { TEST_FILES } from "./file-types.js";
+import { TEST_FILES } from "../file-types.js";
 
 export default defineConfig(
   {
+    ...vitest.configs.recommended,
     files: TEST_FILES,
-    plugins: {
-      vitest,
-    },
-    rules: {
-      ...vitest.configs.recommended.rules,
-    },
   },
-
   {
     name: "@sparticuz/eslint-config/vitest.ts",
 

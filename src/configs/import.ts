@@ -2,11 +2,13 @@ import tsParser from "@typescript-eslint/parser";
 import { importX } from "eslint-plugin-import-x";
 
 import { ConfigArray } from "../config-array.js";
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default new ConfigArray([
-  importX.flatConfigs.recommended,
-  importX.flatConfigs.typescript,
+  { ...importX.flatConfigs.recommended, files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES] },
+  { ...importX.flatConfigs.typescript, files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES] },
   {
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     languageOptions: {
       ecmaVersion: "latest",
       parser: tsParser,

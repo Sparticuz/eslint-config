@@ -2,7 +2,7 @@ import type { Linter } from "eslint";
 
 import perfectionist from "eslint-plugin-perfectionist";
 
-import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "./file-types.js";
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default [
   {

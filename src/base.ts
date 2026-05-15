@@ -9,7 +9,6 @@ import eslintJSConfig from "./configs/eslint.js";
 import nodeConfig from "./configs/n.js";
 import noUnsanitizedConfig from "./configs/no-unsanitized.js";
 import perfectionistConfig from "./configs/perfectionist.js";
-import prettierConfig from "./configs/prettier.js";
 import promiseConfig from "./configs/promise.js";
 import regexpConfig from "./configs/regexp.js";
 import securityConfig from "./configs/security.js";
@@ -33,7 +32,6 @@ export default new ConfigArray(
     ...sonarJsConfig,
     ...securityConfig,
     ...perfectionistConfig,
-    ...prettierConfig,
     ...vitestConfig,
   ),
 );

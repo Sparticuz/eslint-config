@@ -6,7 +6,7 @@ export default new ConfigArray([
   {
     ...json.configs.recommended,
     files: ["**/*.json"],
-    ignores: ["**/package-lock.json", "**/pnpm-lock.yaml"],
+    ignores: ["**/package-lock.json"],
     language: "json/json",
     name: "@sparticuz/eslint-config/json",
   },

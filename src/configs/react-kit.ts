@@ -136,12 +136,17 @@ function jsxFragments(): RuleFunction {
   return jsxFragmentsRule;
 }
 
+import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
+
 const config: Linter.Config[] = [
-  kit()
-    .use(functionComponentDefinition)
-    .use(jsxBooleanValue)
-    .use(jsxFragments)
-    .getConfig(),
+  {
+    ...kit()
+      .use(functionComponentDefinition)
+      .use(jsxBooleanValue)
+      .use(jsxFragments)
+      .getConfig(),
+    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+  },
 ];
 
 export default config;
