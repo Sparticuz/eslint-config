@@ -63,6 +63,8 @@
     "eslint-plugin-perfectionist": "^5.9.1",
     "eslint-plugin-promise": "^7.3.0",
     "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-import": "^2.1.0",
+    "eslint-plugin-react-refresh": "^0.5.3",
     "eslint-plugin-regexp": "^3.1.0",
     "eslint-plugin-security": "^4.0.1",
     "eslint-plugin-sonarjs": "^4.1.0",
@@ -76,14 +78,11 @@
     "@types/eslint-config-prettier": "^6.11.3",
     "@types/eslint-plugin-security": "^3.0.1",
     "@types/node": "^24.13.2",
-    "@typescript-eslint/utils": "^8.62.0",
-    "eslint": "^10.5.0",
-    "eslint-plugin-react-import": "^2.1.0",
-    "eslint-plugin-react-refresh": "^0.5.3"
+    "@typescript-eslint/utils": "^8.62.0"
   },
   "peerDependencies": {
-    "eslint": "^10.3.0",
-    "prettier": "^3.8.3",
+    "eslint": "^10.5.0",
+    "prettier": "^3.8.4",
     "typescript": "^6.0.3"
   },
   "engines": {
