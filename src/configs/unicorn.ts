@@ -46,6 +46,20 @@ export default [
        */
       "unicorn/max-nested-calls": "off",
       /**
+       * Add some ones I care about
+       */
+      "unicorn/name-replacements": [
+        "warn",
+        {
+          allowList: {
+            e18e: true,
+          },
+          replacements: {
+            env: false,
+          },
+        },
+      ],
+      /**
        * For database stuff, I need nulls
        */
       "unicorn/no-null": "off",
