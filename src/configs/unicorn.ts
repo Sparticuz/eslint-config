@@ -42,6 +42,10 @@ export default [
         },
       ],
       /**
+       * No way I'm using this one, lol
+       */
+      "unicorn/max-nested-calls": "off",
+      /**
        * For database stuff, I need nulls
        */
       "unicorn/no-null": "off",
