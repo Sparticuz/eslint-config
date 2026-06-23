@@ -56,6 +56,8 @@ export default [
           },
           replacements: {
             env: false,
+            params: false,
+            props: false,
           },
         },
       ],
