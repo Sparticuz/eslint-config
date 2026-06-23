@@ -43,5 +43,13 @@ export const NEXT_JS_FILES = [
   "**/robots.ts",
   "**/middleware.ts",
 ];
+export const JSX_FILES = [
+  "**/*.jsx",
+  "**/*.cjsx",
+  "**/*.mjsx",
+  "**/*.tsx",
+  "**/*.ctsx",
+  "**/*.mtsx",
+];
 export const CSS_FILES = ["**/*.css", "**/*.scss", "**/*.sass", "**/*.less"];
 export const PACKAGEJSON_FILES = ["**/package.json"];

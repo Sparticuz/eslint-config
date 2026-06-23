@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import regexpPlugin from "eslint-plugin-regexp";
 
@@ -10,4 +10,4 @@ export default [
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/regexp.ts",
   },
-] as Linter.Config[];
+] as Config[];

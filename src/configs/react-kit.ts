@@ -1,5 +1,5 @@
 import type { RuleFunction } from "@eslint-react/kit";
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import kit, { merge } from "@eslint-react/kit";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
@@ -138,7 +138,7 @@ function jsxFragments(): RuleFunction {
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-const config: Linter.Config[] = [
+const config: Config[] = [
   {
     ...kit()
       .use(functionComponentDefinition)

@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import nodePlugin from "eslint-plugin-n";
 
@@ -27,4 +27,4 @@ export default [
       "n/no-unpublished-import": "off",
     },
   },
-] as Linter.Config[];
+] as Config[];

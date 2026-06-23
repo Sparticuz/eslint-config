@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import perfectionist from "eslint-plugin-perfectionist";
 
@@ -51,4 +51,4 @@ export default [
       ],
     },
   },
-] as Linter.Config[];
+] as Config[];

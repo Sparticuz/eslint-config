@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import eslintReact from "@eslint-react/eslint-plugin";
 import reactHooks from "eslint-plugin-react-hooks";
@@ -20,4 +20,4 @@ export default [
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
   eslintKit,
-] as Linter.Config[];
+] as Config[];

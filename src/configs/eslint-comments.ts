@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
 
@@ -28,4 +28,4 @@ export default [
       "@eslint-community/eslint-comments/require-description": ["warn"],
     },
   },
-] as Linter.Config[];
+] as Config[];

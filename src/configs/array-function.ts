@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import arrayFuncPlugin from "eslint-plugin-array-func";
 
@@ -19,4 +19,4 @@ export default [
       "array-func/prefer-array-from": "off",
     },
   },
-] as Linter.Config[];
+] as Config[];

@@ -2,7 +2,7 @@ import { defineConfig } from "eslint/config";
 
 import { ConfigArray } from "./config-array.js";
 import arrayFunctionConfig from "./configs/array-function.js";
-// eslint-disable-next-line unicorn/prevent-abbreviations -- e18e is a proper ecosystem name, not an abbreviation
+// eslint-disable-next-line unicorn/name-replacements -- e18e is the name of the plugin
 import e18eConfig from "./configs/e18e.js";
 import eslintCommentsConfig from "./configs/eslint-comments.js";
 import eslintJSConfig from "./configs/eslint.js";

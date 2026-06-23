@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import unicornPlugin from "eslint-plugin-unicorn";
 
@@ -14,6 +14,10 @@ export default [
     name: "@sparticuz/eslint-config/unicorn.ts",
     plugins: unicornPlugin.configs.recommended.plugins,
     rules: {
+      /**
+       * Disable because perfectionsit plugin already enforces this
+       */
+      "unicorn/consistent-class-member-order": "off",
       /**
        * Use my to-do style comments
        */
@@ -31,7 +35,7 @@ export default [
         "error",
         {
           styles: {
-            "node:path": {
+            path: {
               named: true,
             },
           },
@@ -47,4 +51,4 @@ export default [
       "unicorn/switch-case-braces": "off",
     },
   },
-] as Linter.Config[];
+] as Config[];

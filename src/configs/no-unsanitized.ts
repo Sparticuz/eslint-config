@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import nounsanitized from "eslint-plugin-no-unsanitized";
 
@@ -10,4 +10,4 @@ export default [
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "no-unsanitized/recommended",
   },
-] as Linter.Config[];
+] as Config[];

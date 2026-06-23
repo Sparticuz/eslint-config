@@ -5,7 +5,9 @@ import globals from "globals";
 import { ConfigArray } from "./config-array.js";
 import importConfig from "./configs/import.js";
 import jsxA11yConfig from "./configs/jsxa11y.js";
+import reactImportConfig from "./configs/react-import.js";
 import reactKitConfig from "./configs/react-kit.js";
+import reactRefreshConfig from "./configs/react-refresh.js";
 import reactConfigs from "./configs/react.js";
 import {
   JAVASCRIPT_FILES,
@@ -23,6 +25,8 @@ export default new ConfigArray(
     ...jsxA11yConfig,
     ...importConfig,
     ...reactKitConfig,
+    ...reactRefreshConfig,
+    ...reactImportConfig,
     {
       files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
       languageOptions: {

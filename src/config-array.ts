@@ -1,7 +1,7 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 /**
- * A thin wrapper around a Linter.Config[] that adds a `with()` method.
+ * A thin wrapper around a Config[] that adds a `with()` method.
  *
  * `with()` lets consumers override rules from plugins that are already
  * registered inside the shared config, without needing to re-install or
@@ -27,19 +27,19 @@ import type { Linter } from "eslint";
  * ];
  */
 export class ConfigArray {
-  readonly #configs: Linter.Config[];
+  readonly #configs: Config[];
 
-  constructor(configs: Linter.Config[]) {
+  constructor(configs: Config[]) {
     this.#configs = configs;
   }
 
   /** Spread support: `...myConfig` still works. */
-  [Symbol.iterator](): Iterator<Linter.Config> {
+  [Symbol.iterator](): Iterator<Config> {
     return this.#configs[Symbol.iterator]();
   }
 
   /** Return the underlying array. */
-  toArray(): Linter.Config[] {
+  toArray(): Config[] {
     return [...this.#configs];
   }
 
@@ -53,9 +53,7 @@ export class ConfigArray {
    * Returns a new ConfigArray (the original is not mutated), so calls
    * can be chained.
    */
-  with(
-    overrides: Linter.Config | Linter.Config[],
-  ): ConfigArray {
+  with(overrides: Config | Config[]): ConfigArray {
     const plugins = this.#mergedPlugins();
     const overrideList = Array.isArray(overrides) ? overrides : [overrides];
     const merged = overrideList.map((override) => {
@@ -68,8 +66,8 @@ export class ConfigArray {
   }
 
   /** Merge all plugins from the wrapped config array into a single map. */
-  #mergedPlugins(): NonNullable<Linter.Config["plugins"]> {
-    const merged: NonNullable<Linter.Config["plugins"]> = {};
+  #mergedPlugins(): NonNullable<Config["plugins"]> {
+    const merged: NonNullable<Config["plugins"]> = {};
     for (const config of this.#configs) {
       if (config.plugins) {
         // Last registration wins for duplicate keys — consistent with ESLint's own config merge semantics.

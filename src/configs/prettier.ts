@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import prettierConfig from "eslint-config-prettier/flat";
 
@@ -10,4 +10,4 @@ export default new ConfigArray([
     ...prettierConfig,
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
-] satisfies Linter.Config[]);
+] satisfies Config[]);

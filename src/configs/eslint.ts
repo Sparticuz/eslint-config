@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import js from "@eslint/js";
 import globals from "globals";
@@ -48,4 +48,4 @@ export default [
       "sort-keys": "off",
     },
   },
-] satisfies Linter.Config[];
+] satisfies Config[];

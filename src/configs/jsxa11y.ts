@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import jsxA11y from "eslint-plugin-jsx-a11y-x";
 
@@ -9,4 +9,4 @@ export default [
     ...jsxA11y.configs.strict,
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
-] as Linter.Config[];
+] as Config[];

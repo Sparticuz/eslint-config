@@ -1,4 +1,4 @@
-import type { Linter } from "eslint";
+import type { Config } from "eslint/config";
 
 import sonarJSPlugin from "eslint-plugin-sonarjs";
 
@@ -33,4 +33,4 @@ export default [
       "sonarjs/todo-tag": "off",
     },
   },
-] as Linter.Config[];
+] as Config[];
