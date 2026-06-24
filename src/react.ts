@@ -59,6 +59,7 @@ export default new ConfigArray(
       rules: {
         "@eslint-react/kit/function-component-definition": "off",
         "import-x/no-default-export": "off",
+        "unicorn/default-export-style": ["error", { functions: "inline" }],
       },
     },
 
