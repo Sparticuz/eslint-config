@@ -19,6 +19,15 @@ export default [
        */
       "unicorn/consistent-class-member-order": "off",
       /**
+       * I can't make a named arrow function an inline default export
+       */
+      "unicorn/default-export-style": [
+        "error",
+        {
+          functions: "separate",
+        },
+      ],
+      /**
        * Use my to-do style comments
        */
       "unicorn/expiring-todo-comments": [
