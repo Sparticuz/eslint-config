@@ -62,9 +62,26 @@ export default [
         },
       ],
       /**
+       * This is causing alot of false positives
+       */
+      "unicorn/no-declarations-before-early-exit": "off",
+      /**
        * For database stuff, I need nulls
        */
       "unicorn/no-null": "off",
+      /**
+       * This conflicts with prettier and I can't change prettier's behavior, so I have to disable this
+       */
+      "unicorn/number-literal-case": [
+        "error",
+        {
+          hexadecimalValue: "lowercase",
+        },
+      ],
+      /**
+       * I don't really like this, I prefer using the full function title in the ternary
+       */
+      "unicorn/prefer-minimal-ternary": "off",
       /**
        * Disable switch curly braces
        */
