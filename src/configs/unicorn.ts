@@ -38,6 +38,15 @@ export default [
         },
       ],
       /**
+       * Disable the check on directories, when using nextjs, folders can't have dashes in them
+       */
+      "unicorn/filename-case": [
+        "error",
+        {
+          checkDirectories: false,
+        },
+      ],
+      /**
        * I want to use named imports for path
        */
       "unicorn/import-style": [
