@@ -9,6 +9,9 @@ const config: Config[] = [
     ...reactImport.configs.recommended,
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/react-import",
+    rules: {
+      "react-import/consistent-syntax": ["error", "named"],
+    },
   },
 ];
 export default config;
