@@ -11,6 +11,7 @@ import reactRefreshConfig from "./configs/react-refresh.js";
 import reactConfigs from "./configs/react.js";
 import {
   JAVASCRIPT_FILES,
+  JSX_FILES,
   NEXT_JS_FILES,
   TYPESCRIPT_FILES,
 } from "./file-types.js";
@@ -68,6 +69,28 @@ export default new ConfigArray(
       name: "@sparticuz/eslint-config/react/config-overrides",
       rules: {
         "import-x/no-default-export": "off",
+      },
+    },
+    /**
+     * These are for react files, not just nextjs files
+     */
+    {
+      files: JSX_FILES,
+      rules: {
+        "unicorn/name-replacements": [
+          "error",
+          {
+            replacements: {
+              param: false,
+              params: false,
+              prev: false,
+              prop: false,
+              props: false,
+              ref: false,
+              refs: false,
+            },
+          },
+        ],
       },
     },
   ),
