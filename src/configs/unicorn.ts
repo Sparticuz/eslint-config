@@ -73,12 +73,24 @@ export default [
             e18e: true,
           },
           replacements: {
+            args: false,
             env: false,
+            fn: false,
+            lib: false,
+            param: false,
             params: false,
+            prev: false,
+            prop: false,
             props: false,
+            ref: false,
+            refs: false,
           },
         },
       ],
+      /**
+       * e18e/prefer-array-fill is more precise
+       */
+      "unicorn/no-array-from-fill": "off",
       /**
        * This is causing alot of false positives
        */
@@ -87,6 +99,10 @@ export default [
        * For database stuff, I need nulls
        */
       "unicorn/no-null": "off",
+      /**
+       * I find it better to be explicit with undefined
+       */
+      "unicorn/no-useless-undefined": "off",
       /**
        * This conflicts with prettier and I can't change prettier's behavior, so I have to disable this
        */
