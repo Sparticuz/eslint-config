@@ -1,4 +1,3 @@
-// eslint-disable-next-line unicorn/name-replacements -- e18e is the name of the plugin
 import e18e from "@e18e/eslint-plugin";
 import { defineConfig } from "eslint/config";
 
