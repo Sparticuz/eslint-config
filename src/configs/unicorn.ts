@@ -116,13 +116,10 @@ export default [
        * I don't really like this, I prefer using the full function title in the ternary
        */
       "unicorn/prefer-minimal-ternary": "off",
-      "unicorn/single-line-block-comment-style": [
-        "error",
-        "multiline",
-        {
-          ignore: ["@type"],
-        },
-      ],
+      /**
+       * This prevents jsdoc from working properly
+       */
+      "unicorn/single-line-block-comment-style": "off",
       /**
        * Disable switch curly braces
        */
