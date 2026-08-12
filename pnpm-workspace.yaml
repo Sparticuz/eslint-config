@@ -2,3 +2,4 @@ allowBuilds:
   unrs-resolver: true
 minimumReleaseAgeExclude:
   - eslint-plugin-unicorn
+  - eslint-plugin-react-import
