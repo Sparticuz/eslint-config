@@ -33,12 +33,12 @@ export class ConfigArray {
     this.#configs = configs;
   }
 
-  /** Spread support: `...myConfig` still works. */
+  // Spread support: `...myConfig` still works.
   [Symbol.iterator](): Iterator<Config> {
     return this.#configs[Symbol.iterator]();
   }
 
-  /** Return the underlying array. */
+  // Return the underlying array.
   toArray(): Config[] {
     return [...this.#configs];
   }
@@ -65,7 +65,7 @@ export class ConfigArray {
     return new ConfigArray([...this.#configs, ...merged]);
   }
 
-  /** Merge all plugins from the wrapped config array into a single map. */
+  // Merge all plugins from the wrapped config array into a single map.
   #mergedPlugins(): NonNullable<Config["plugins"]> {
     const merged: NonNullable<Config["plugins"]> = {};
     for (const config of this.#configs) {

@@ -116,6 +116,13 @@ export default [
        * I don't really like this, I prefer using the full function title in the ternary
        */
       "unicorn/prefer-minimal-ternary": "off",
+      "unicorn/single-line-block-comment-style": [
+        "error",
+        "multiline",
+        {
+          ignore: ["@type"],
+        },
+      ],
       /**
        * Disable switch curly braces
        */
