@@ -15,6 +15,15 @@ export default [
     plugins: unicornPlugin.configs.recommended.plugins,
     rules: {
       /**
+       * Allow 'handler' as a boolean name for Serverless
+       */
+      "unicorn/consistent-boolean-name": [
+        "warn",
+        {
+          ignore: ["handler"],
+        },
+      ],
+      /**
        * Disable because perfectionsit plugin already enforces this
        */
       "unicorn/consistent-class-member-order": "off",
