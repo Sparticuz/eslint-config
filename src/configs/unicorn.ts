@@ -21,6 +21,9 @@ export default [
         "warn",
         {
           ignore: ["handler"],
+          prefixes: {
+            does: true,
+          },
         },
       ],
       /**
