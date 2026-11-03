@@ -1,13 +1,13 @@
 import tsParser from "@typescript-eslint/parser";
 import { importX } from "eslint-plugin-import-x";
+import { defineConfig } from "eslint/config";
 
 import { ConfigArray } from "../config-array.js";
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default new ConfigArray([
-  { ...importX.flatConfigs.recommended, files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES] },
-  { ...importX.flatConfigs.typescript, files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES] },
-  {
+export default new ConfigArray(
+  defineConfig({
+    extends: [importX.flatConfigs.recommended, importX.flatConfigs.typescript],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     languageOptions: {
       ecmaVersion: "latest",
@@ -15,7 +15,6 @@ export default new ConfigArray([
       sourceType: "module",
     },
     name: "@sparticuz/eslint-config/import.ts",
-    plugins: importX.flatConfigs.recommended.plugins,
     rules: {
       /**
        * Turn off all rules based on the advice of @typescript/eslint
@@ -43,5 +42,5 @@ export default new ConfigArray([
         typescript: true,
       },
     },
-  },
-]);
+  }),
+);

@@ -1,15 +1,11 @@
-import type { Config } from "eslint/config";
-
 import arrayFuncPlugin from "eslint-plugin-array-func";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...arrayFuncPlugin.configs.recommended,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-  },
-  {
+    extends: [arrayFuncPlugin.configs.recommended],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/array-function.ts",
     rules: {
@@ -19,4 +15,4 @@ export default [
       "array-func/prefer-array-from": "off",
     },
   },
-] as Config[];
+]);

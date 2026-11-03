@@ -1,15 +1,11 @@
-import type { Config } from "eslint/config";
-
 import comments from "@eslint-community/eslint-plugin-eslint-comments/configs";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...comments.recommended,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-  },
-  {
+    extends: [comments.recommended],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/eslint-comments.ts",
     rules: {
@@ -28,4 +24,4 @@ export default [
       "@eslint-community/eslint-comments/require-description": ["warn"],
     },
   },
-] as Config[];
+]);

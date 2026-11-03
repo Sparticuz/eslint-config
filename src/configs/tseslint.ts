@@ -4,15 +4,11 @@ import tseslint from "typescript-eslint";
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default defineConfig(
-  tseslint.configs.strictTypeChecked.map((config) => ({
-    ...config,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-  })),
-  tseslint.configs.stylisticTypeChecked.map((config) => ({
-    ...config,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-  })),
   {
+    extends: [
+      ...tseslint.configs.strictTypeChecked,
+      ...tseslint.configs.stylisticTypeChecked,
+    ],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/tseslint.ts",
 
@@ -20,9 +16,6 @@ export default defineConfig(
       parserOptions: {
         projectService: true,
       },
-    },
-    plugins: {
-      "@typescript-eslint": tseslint.plugin,
     },
     rules: {
       /**
@@ -65,7 +58,7 @@ export default defineConfig(
   },
   {
     // Disable typechecking for Javascript files
-    ...tseslint.configs.disableTypeChecked,
+    extends: [tseslint.configs.disableTypeChecked],
     files: JAVASCRIPT_FILES,
   },
 );

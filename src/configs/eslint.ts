@@ -1,17 +1,12 @@
-import type { Config } from "eslint/config";
-
 import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
 import globals from "globals";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...js.configs.recommended,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-    name: "@eslint/js/recommended",
-  },
-  {
+    extends: [js.configs.recommended],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/eslint.ts",
 
@@ -48,4 +43,4 @@ export default [
       "sort-keys": "off",
     },
   },
-] satisfies Config[];
+]);

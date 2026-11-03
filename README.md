@@ -18,9 +18,10 @@ npm install --save-dev @sparticuz/eslint-config typescript-eslint typescript pre
 | `@sparticuz/eslint-config/import`       | Import rules (standalone for non-React projects)                              |
 | `@sparticuz/eslint-config/react`        | React + Next.js + JSX a11y + React Hooks + import rules                       |
 | `@sparticuz/eslint-config/tailwind`     | Tailwind CSS linting via eslint-plugin-better-tailwindcss                     |
-| `@sparticuz/eslint-config/json`         | JSON/JSONC linting via @eslint/json                                           |
-| `@sparticuz/eslint-config/markdown`     | Markdown linting via @eslint/markdown                                         |
-| `@sparticuz/eslint-config/css`          | CSS linting via @eslint/css                                                   |
+| `@sparticuz/eslint-config/json`         | JSON/JSONC linting via @eslint/json + Unicorn                                 |
+| `@sparticuz/eslint-config/markdown`     | Markdown linting via @eslint/markdown + Unicorn                               |
+| `@sparticuz/eslint-config/css`          | CSS linting via @eslint/css + Unicorn                                         |
+| `@sparticuz/eslint-config/yaml`         | YAML linting via eslint-plugin-yml + Unicorn                                  |
 | `@sparticuz/eslint-config/package-json` | package.json linting via eslint-plugin-package-json                           |
 
 ## Overriding Rules
@@ -125,7 +126,7 @@ The React config automatically:
 - Enables `import/no-default-export` as a warning
 - Relaxes it for Next.js convention files (`page.tsx`, `layout.tsx`, `route.ts`, etc.) and config/story files
 - Sets `react/function-component-definition` to prefer arrow functions (function declarations for Next.js files)
-- Configures `@typescript-eslint/no-misused-promises` for JSX attributes
+- Configures `@typescript-eslint/no-misused-promises` for JSX attributes in TypeScript files; JavaScript/JSX keeps the base config's type-aware rules disabled
 
 ### With Tailwind CSS
 
@@ -163,7 +164,7 @@ export default defineConfig(
 );
 ```
 
-### With JSON, Markdown, CSS, and package.json linting
+### With JSON, Markdown, CSS, YAML, and package.json linting
 
 ```js
 // @ts-check
@@ -172,6 +173,7 @@ import cssConfig from "@sparticuz/eslint-config/css";
 import jsonConfig from "@sparticuz/eslint-config/json";
 import markdownConfig from "@sparticuz/eslint-config/markdown";
 import packageJsonConfig from "@sparticuz/eslint-config/package-json";
+import yamlConfig from "@sparticuz/eslint-config/yaml";
 import { defineConfig } from "eslint/config";
 
 export default defineConfig(
@@ -183,6 +185,7 @@ export default defineConfig(
   ...markdownConfig,
   ...cssConfig,
   ...packageJsonConfig,
+  ...yamlConfig,
 );
 ```
 

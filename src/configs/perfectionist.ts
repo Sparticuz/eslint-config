@@ -1,19 +1,13 @@
-import type { Config } from "eslint/config";
-
 import perfectionist from "eslint-plugin-perfectionist";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...perfectionist.configs["recommended-natural"],
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-    name: "perfectionist/recommended-natural",
-  },
-  {
+    extends: [perfectionist.configs["recommended-natural"]],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/perfectionist.ts",
-    plugins: perfectionist.configs["recommended-natural"].plugins,
     rules: {
       /**
        * Reset sorting by a new line
@@ -51,4 +45,4 @@ export default [
       ],
     },
   },
-] as Config[];
+]);

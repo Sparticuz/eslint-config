@@ -1,18 +1,13 @@
-import type { Config } from "eslint/config";
-
 import unicornPlugin from "eslint-plugin-unicorn";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...unicornPlugin.configs.recommended,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-  },
-  {
+    extends: [unicornPlugin.configs.recommended],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/unicorn.ts",
-    plugins: unicornPlugin.configs.recommended.plugins,
     rules: {
       /**
        * Allow 'handler' as a boolean name for Serverless
@@ -104,6 +99,10 @@ export default [
        */
       "unicorn/no-array-from-fill": "off",
       /**
+       * Preserve conventional asterisk-prefixed JSDoc comments
+       */
+      "unicorn/no-asterisk-prefix-in-documentation-comments": "off",
+      /**
        * This is causing alot of false positives
        */
       "unicorn/no-declarations-before-early-exit": "off",
@@ -138,4 +137,4 @@ export default [
       "unicorn/switch-case-braces": "off",
     },
   },
-] as Config[];
+]);

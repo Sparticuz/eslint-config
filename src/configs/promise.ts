@@ -1,12 +1,11 @@
-import type { Config } from "eslint/config";
-
 import promisePlugin from "eslint-plugin-promise";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...promisePlugin.configs["flat/recommended"],
+    extends: [promisePlugin.configs["flat/recommended"]],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
-] as Config[];
+]);

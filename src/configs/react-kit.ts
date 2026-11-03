@@ -1,8 +1,8 @@
 import type { RuleFunction } from "@eslint-react/kit";
-import type { Config } from "eslint/config";
 
 import kit, { merge } from "@eslint-react/kit";
 import { AST_NODE_TYPES } from "@typescript-eslint/utils";
+import { defineConfig } from "eslint/config";
 
 /**
  * Enforce arrow functions for React function components.
@@ -138,15 +138,15 @@ function jsxFragments(): RuleFunction {
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-const config: Config[] = [
-  {
-    ...kit()
+const config = defineConfig({
+  extends: [
+    kit()
       .use(functionComponentDefinition)
       .use(jsxBooleanValue)
       .use(jsxFragments)
       .getConfig(),
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-  },
-];
+  ],
+  files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+});
 
 export default config;

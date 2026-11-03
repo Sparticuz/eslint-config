@@ -1,19 +1,13 @@
-import type { Config } from "eslint/config";
-
 import sonarJSPlugin from "eslint-plugin-sonarjs";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...sonarJSPlugin.configs.recommended,
-    files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
-    name: "sonarjs/recommended",
-  },
-  {
+    extends: [sonarJSPlugin.configs.recommended],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/sonarjs.ts",
-    plugins: sonarJSPlugin.configs.recommended.plugins,
     rules: {
       /**
        * Disable in favor of @typescript-eslint/no-deprecated
@@ -33,4 +27,4 @@ export default [
       "sonarjs/todo-tag": "off",
     },
   },
-] as Config[];
+]);

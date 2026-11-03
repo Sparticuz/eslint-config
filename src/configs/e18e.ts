@@ -9,7 +9,7 @@ import {
 
 const config = defineConfig([
   {
-    ...e18e.configs.recommended,
+    extends: [e18e.configs.recommended],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES, ...PACKAGEJSON_FILES],
     name: "@sparticuz/eslint-config/e18e.ts",
   },

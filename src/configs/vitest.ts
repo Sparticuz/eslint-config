@@ -4,40 +4,34 @@ import { defineConfig } from "eslint/config";
 
 import { TEST_FILES } from "../file-types.js";
 
-export default defineConfig(
-  {
-    ...vitest.configs.recommended,
-    files: TEST_FILES,
-  },
-  {
-    name: "@sparticuz/eslint-config/vitest.ts",
-
-    files: TEST_FILES,
-    languageOptions: {
-      globals: {
-        ...vitest.environments.env.globals,
-      },
-    },
-    plugins: nodePlugin.configs["flat/recommended"].plugins,
-    rules: {
-      /**
-       * Vite will already be there because of vitest
-       */
-      "n/no-extraneous-import": [
-        "error",
-        {
-          allowModules: ["vite"],
-        },
-      ],
-      /**
-       * Don't require items to be published for tests
-       */
-      "n/no-unpublished-import": "off",
-    },
-    settings: {
-      vitest: {
-        typecheck: true,
-      },
+export default defineConfig({
+  extends: [vitest.configs.recommended],
+  files: TEST_FILES,
+  languageOptions: {
+    globals: {
+      ...vitest.environments.env.globals,
     },
   },
-);
+  name: "@sparticuz/eslint-config/vitest.ts",
+  plugins: nodePlugin.configs["flat/recommended"].plugins,
+  rules: {
+    /**
+     * Vite will already be there because of vitest
+     */
+    "n/no-extraneous-import": [
+      "error",
+      {
+        allowModules: ["vite"],
+      },
+    ],
+    /**
+     * Don't require items to be published for tests
+     */
+    "n/no-unpublished-import": "off",
+  },
+  settings: {
+    vitest: {
+      typecheck: true,
+    },
+  },
+});

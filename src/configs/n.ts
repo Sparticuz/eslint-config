@@ -1,12 +1,11 @@
-import type { Config } from "eslint/config";
-
 import nodePlugin from "eslint-plugin-n";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
-export default [
+export default defineConfig([
   {
-    ...nodePlugin.configs["flat/recommended"],
+    extends: [nodePlugin.configs["flat/recommended"]],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
   {
@@ -27,4 +26,4 @@ export default [
       "n/no-unpublished-import": "off",
     },
   },
-] as Config[];
+]);

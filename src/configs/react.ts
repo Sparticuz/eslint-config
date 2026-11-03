@@ -1,23 +1,23 @@
-import type { Config } from "eslint/config";
-
 import eslintReact from "@eslint-react/eslint-plugin";
 import reactHooks from "eslint-plugin-react-hooks";
+import { defineConfig } from "eslint/config";
 
 import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 import eslintKit from "./react-kit.js";
 
-export default [
+export default defineConfig(
   {
-    ...reactHooks.configs.flat["recommended-latest"],
+    extends: [reactHooks.configs.flat["recommended-latest"]],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
     name: "@sparticuz/eslint-config/react-hooks.ts",
   },
-  // Must come last: disables react-hooks/* rules that @eslint-react covers,
-  // so "off" overrides win rather than being overridden by recommended-latest.
-  eslintReact.configs["disable-conflict-eslint-plugin-react-hooks"],
   {
-    ...eslintReact.configs["strict-typescript"],
+    // Disable conflicts after recommended-latest so the "off" overrides win.
+    extends: [
+      eslintReact.configs["disable-conflict-eslint-plugin-react-hooks"],
+      eslintReact.configs["strict-typescript"],
+    ],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
   eslintKit,
-] as Config[];
+);

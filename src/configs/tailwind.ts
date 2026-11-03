@@ -5,6 +5,7 @@ import { ConfigArray } from "../config-array.js";
 
 export default new ConfigArray(
   defineConfig({
+    extends: [tailwindPlugin.configs.recommended],
     files: ["**/*.{jsx,tsx}"],
     languageOptions: {
       parserOptions: {
@@ -14,11 +15,7 @@ export default new ConfigArray(
       },
     },
     name: "@sparticuz/eslint-config/tailwind",
-    plugins: {
-      "better-tailwindcss": tailwindPlugin,
-    },
     rules: {
-      ...tailwindPlugin.configs.recommended.rules,
       /**
        * Prefer single-line Tailwind classes
        */

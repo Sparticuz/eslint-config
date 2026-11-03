@@ -38,19 +38,30 @@ export default new ConfigArray(
       name: "@sparticuz/eslint-config/react/browser-globals",
     },
 
-    nextPlugin.configs.recommended,
-    nextPlugin.configs["core-web-vitals"],
+    {
+      extends: [
+        nextPlugin.configs.recommended,
+        nextPlugin.configs["core-web-vitals"],
+      ],
+    },
 
     {
       files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
       name: "@sparticuz/eslint-config/react",
       rules: {
         "@eslint-react/kit/function-component-definition": "warn",
+        "import-x/no-default-export": "warn",
+      },
+    },
+
+    {
+      files: TYPESCRIPT_FILES,
+      name: "@sparticuz/eslint-config/react/typescript",
+      rules: {
         "@typescript-eslint/no-misused-promises": [
           "error",
           { checksVoidReturn: { attributes: false } },
         ],
-        "import-x/no-default-export": "warn",
       },
     },
 
