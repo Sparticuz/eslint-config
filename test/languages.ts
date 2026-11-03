@@ -2,6 +2,7 @@ import baseConfig from "@sparticuz/eslint-config";
 import cssConfig from "@sparticuz/eslint-config/css";
 import jsonConfig from "@sparticuz/eslint-config/json";
 import markdownConfig from "@sparticuz/eslint-config/markdown";
+import reactConfig from "@sparticuz/eslint-config/react";
 import yamlConfig from "@sparticuz/eslint-config/yaml";
 import { ESLint } from "eslint";
 import assert from "node:assert/strict";
@@ -40,3 +41,36 @@ for (const [filePath, source, rule] of [
 }
 
 assert.equal(await eslint.isPathIgnored("package-lock.json"), true);
+
+for (const config of [baseConfig, [...baseConfig, ...reactConfig]]) {
+  const javascript = new ESLint({
+    overrideConfig: [...config, { rules: { "no-undef": "error" } }],
+    overrideConfigFile: true,
+  });
+  for (const extension of ["cjs", "mjs"]) {
+    const [result] = await javascript.lintText(
+      "module.exports = require('node:path'); exports.dir = __dirname; exports.file = __filename; missingGlobal();",
+      { filePath: `postcss.config.${extension}` },
+    );
+    assert.ok(result);
+    assert.equal(result.fatalErrorCount, 0, JSON.stringify(result.messages));
+    const undefinedNames = result.messages
+      .filter(({ ruleId }) => ruleId === "no-undef")
+      .map(({ message }) => message);
+    assert.deepEqual(
+      undefinedNames,
+      (extension === "cjs" ?
+        ["missingGlobal"]
+      : [
+          "module",
+          "require",
+          "exports",
+          "__dirname",
+          "exports",
+          "__filename",
+          "missingGlobal",
+        ]
+      ).map((name) => `'${name}' is not defined.`),
+    );
+  }
+}

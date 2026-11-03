@@ -5,8 +5,12 @@ import { JAVASCRIPT_FILES, TYPESCRIPT_FILES } from "../file-types.js";
 
 export default defineConfig([
   {
-    extends: [nodePlugin.configs["flat/recommended"]],
+    extends: [nodePlugin.configs["flat/recommended-module"]],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
+  },
+  {
+    extends: [nodePlugin.configs["flat/recommended-script"]],
+    files: ["**/*.{cjs,cjsx,cts,ctsx}"],
   },
   {
     name: "@sparticuz/eslint-config/n.ts/config-overrides",

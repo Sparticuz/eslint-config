@@ -12,7 +12,6 @@ export default new ConfigArray(
     languageOptions: {
       ecmaVersion: "latest",
       parser: tsParser,
-      sourceType: "module",
     },
     name: "@sparticuz/eslint-config/import.ts",
     rules: {
