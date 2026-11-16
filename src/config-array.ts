@@ -3,12 +3,9 @@ import type { Config } from "eslint/config";
 /**
  * A thin wrapper around a Config[] that adds a `with()` method.
  *
- * `with()` lets consumers override rules from plugins that are already
- * registered inside the shared config, without needing to re-install or
- * re-import those plugins.  ESLint v10 requires a plugin to be registered
- * in the same config object that references its rules; `with()` handles
- * that automatically by collecting every plugin from the wrapped array and
- * merging them into the appended override config object.
+ * `with()` is a convenience for appending overrides with the bundled
+ * plugins merged in. Plain config objects appended after spreading the
+ * shared config can also override rules from already-registered plugins.
  *
  * The class implements Symbol.iterator so existing `...spread` usage
  * continues to work without any changes.
@@ -47,8 +44,7 @@ export class ConfigArray {
    * Append one or more override config objects to this array.
    *
    * Every plugin already registered anywhere in the base config is
-   * automatically merged into each override object so ESLint v10's
-   * per-config-object plugin lookup works correctly.
+   * automatically merged into each override object.
    *
    * Returns a new ConfigArray (the original is not mutated), so calls
    * can be chained.
