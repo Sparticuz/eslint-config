@@ -19,5 +19,9 @@ export default defineConfig(
     ],
     files: [...JAVASCRIPT_FILES, ...TYPESCRIPT_FILES],
   },
+  {
+    extends: [eslintReact.configs["strict-type-checked"]],
+    files: TYPESCRIPT_FILES,
+  },
   eslintKit,
 );

@@ -123,6 +123,7 @@ export default defineConfig(
 
 The React config automatically:
 
+- Uses ESLint React's `strict-type-checked` preset for TypeScript files and `strict-typescript` for JavaScript/JSX
 - Enables `import/no-default-export` as a warning
 - Relaxes it for Next.js convention files (`page.tsx`, `layout.tsx`, `route.ts`, etc.) and config/story files
 - Sets `react/function-component-definition` to prefer arrow functions (function declarations for Next.js files)
